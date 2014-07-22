@@ -1,0 +1,4 @@
+Characteristics to use for planet image composites:
+- Exclude stars, only use planets (that would be done by comparing them between the two databases | http://phl.upr.edu/projects/habitable-exoplanets-catalog/stats)
+- Radius (if none, default to middling size) (it's based off Jupiter's radius) = size of image base
+- Spectral type  (http://www.uni.edu/morgans/astro/course/Notes/section2/spectraltemps.html)  = color of image base
