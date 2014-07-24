@@ -362,15 +362,14 @@ h1 {
 	font-weight: 300;
 	font-size:2.25rem;
 	line-height:2.5rem;
-	
-	position:absolute;
 }
 
 .introSlide h1 {
+	position:absolute;
 	text-align:center;
 	top:50%;
 	left:50%;
-	transform: translate(-50%,-50%); 
+	transform: translate(-50%,-50%); i
 	max-width:400px;
 }
 
@@ -455,49 +454,12 @@ p.detailText {
 	margin-top:0px;
 }
 
-/* nthReasons */
-	#firstReason, #secondReason, #thirdReason, #fourthReason, #fifthReason, #sixthReason {
-		z-index:1;
-		margin-top:30px;
-		margin-left:10px;
-		margin-right:10px;
-	}
-
-	#firstReason::before, #secondReason::before, #thirdReason::before, #fourthReason::before, #fifthReason::before, #sixthReason::before {
-		position:absolute;
-		top:0;
-		left:50%;
-		transform: translate(-50%,-50%);
-		font-size:4rem;
-		font-weight:700;
-		opacity:.1;
-		z-index:-1;
-	}
-
-	#firstReason::before {
-		content:"1";
-	}
-
-	#secondReason::before {
-		content:"2";
-	}
-
-	#thirdReason::before {
-		content:"3";
-	}
-
-	#fourthReason::before {
-		content:"4";
-	}
-
-	#fifthReason::before {
-		content:"5";
-	}
-
-	#sixthReason::before {
-		content:"6";
-	}
-/* nthReasons end */
+#firstReason, #secondReason, #thirdReason, #fourthReason, #fifthReason, #sixthReason {
+	z-index:1;
+	margin-top:30px;
+	margin-left:10px;
+	margin-right:10px;
+}
 
 
 #visitedOne h1, #discoveredMany h1, #whatDo h2 {
