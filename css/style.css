@@ -33,9 +33,6 @@ body, html {
 .infoText {
 	max-width:400px;
 	min-width:200px;
-	flex-grow: 0;
-    flex-shrink: 0;
-    flex-basis: auto;
     margin-left:10px;
     margin-right:10px;
     margin-top:20px;
@@ -461,6 +458,21 @@ p.detailText {
 	margin-right:10px;
 }
 
+.infoText h1 {
+	text-align:center;
+}
+
+hr {
+	border:0;
+	height:1px;
+	width:50%;
+	background-color: rgb(213,213,213);
+	margin:0 auto 15px auto;
+}
+
+.topHr {
+	margin-bottom:1px;
+}
 
 #visitedOne h1, #discoveredMany h1, #whatDo h2 {
 	color:#fff;
