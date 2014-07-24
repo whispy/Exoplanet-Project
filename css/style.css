@@ -362,14 +362,15 @@ h1 {
 	font-weight: 300;
 	font-size:2.25rem;
 	line-height:2.5rem;
-	text-align:center;
-	top:50%;
-	left:50%;
-	transform: translate(-50%,-50%); 
+	
 	position:absolute;
 }
 
 .introSlide h1 {
+	text-align:center;
+	top:50%;
+	left:50%;
+	transform: translate(-50%,-50%); 
 	max-width:400px;
 }
 
@@ -462,38 +463,38 @@ p.detailText {
 		margin-right:10px;
 	}
 
-	#firstReason::after, #secondReason::after, #thirdReason::after, #fourthReason::after, #fifthReason::after, #sixthReason::after {
+	#firstReason::before, #secondReason::before, #thirdReason::before, #fourthReason::before, #fifthReason::before, #sixthReason::before {
 		position:absolute;
 		top:0;
-		left:0;
-		transform: translate(-55%,-15%);
+		left:50%;
+		transform: translate(-50%,-50%);
 		font-size:4rem;
 		font-weight:700;
 		opacity:.1;
 		z-index:-1;
 	}
 
-	#firstReason::after {
+	#firstReason::before {
 		content:"1";
 	}
 
-	#secondReason::after {
+	#secondReason::before {
 		content:"2";
 	}
 
-	#thirdReason::after {
+	#thirdReason::before {
 		content:"3";
 	}
 
-	#fourthReason::after {
+	#fourthReason::before {
 		content:"4";
 	}
 
-	#fifthReason::after {
+	#fifthReason::before {
 		content:"5";
 	}
 
-	#sixthReason::after {
+	#sixthReason::before {
 		content:"6";
 	}
 /* nthReasons end */
