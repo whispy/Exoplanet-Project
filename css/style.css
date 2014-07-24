@@ -196,11 +196,6 @@ body, html {
 
 
 
-
-
-
-
-
 /* Earths */
 
 	#earth {
@@ -347,7 +342,7 @@ body, html {
 		transform: translate(-50%,-50%); 
 	}
 
-	#earth13 {
+	.earth13 {
 		height:150px;
 		width:150px;
 		margin-left:auto;
@@ -359,6 +354,7 @@ body, html {
 		margin-top:30px;
 	}
 /* Earths end */
+
 
 h1 {
 	font-family:'futura-pt', sans-serif;
@@ -549,7 +545,7 @@ a {
 	.planetsCard h3 {
 	}
 
-	div#earth13 {
+	div.earth13 {
 		width:200px;
 		height:200px;
 		margin:0px;
@@ -621,7 +617,7 @@ a {
 		background-color:rgb(245, 245, 245);
 	}
 
-	div#earth13 {
+	div.earth13 {
 		width:100px;
 		height:100px;
 	}
