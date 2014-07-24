@@ -33,9 +33,9 @@ body, html {
 .infoText {
 	max-width:400px;
 	min-width:200px;
-    margin-left:10px;
-    margin-right:10px;
-    margin-top:20px;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:30px;
     margin-bottom:50px;
 }
 
@@ -367,7 +367,6 @@ h1 {
 	top:50%;
 	left:50%;
 	transform: translate(-50%,-50%); i
-	max-width:400px;
 }
 
 #howManyDiscovered h1 {
@@ -452,10 +451,7 @@ p.detailText {
 }
 
 #firstReason, #secondReason, #thirdReason, #fourthReason, #fifthReason, #sixthReason {
-	z-index:1;
-	margin-top:30px;
-	margin-left:10px;
-	margin-right:10px;
+	margin-top:50px;
 }
 
 .infoText h1 {
@@ -568,6 +564,12 @@ a {
 	#firstReason, #secondReason, #thirdReason, #fourthReason, #fifthReason, #sixthReason {
 		margin-left:10%;
 		margin-right:10%;
+	}
+
+	.introSlide h1 {
+		font-size:1.875rem;
+		line-height:2.125rem;
+		width:90%;
 	}
 
 	#exoExplore p, #takeAction p {
