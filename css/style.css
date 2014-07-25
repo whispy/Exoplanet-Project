@@ -10,6 +10,11 @@ body, html {
 	background-color:#222;
 }
 
+.resetDiv {
+	display:none;
+	opacity:0;
+}
+
 .content {
 }
 
