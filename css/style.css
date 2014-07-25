@@ -77,11 +77,11 @@ body, html {
 	width: 0;
 	height: 65px;
 	margin-left:-50%;
+	margin-top:-17px;
 	position: absolute;
 	background-color: rgb(134, 13, 33);
 	border-radius:3px;
 	z-index: -2;
-	top:-25%;
 	transform: skew(20deg); 
        -moz-transition: all 0.25s ease-in-out; 
          -o-transition: all 0.25s ease-in-out; 
@@ -97,10 +97,9 @@ body, html {
 	height:100%;
 	width:100%;
 	display:block;
-	position: absolute;
+	position: relative;
 	text-align: center;
-	top:50%;
-	transform:translate(0%,-25%);
+	margin-top:17px;
 	color:#fff;
 	z-index:200;
 }
