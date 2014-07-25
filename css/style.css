@@ -84,7 +84,7 @@ body, html {
 .cta a::before {
 	content: "";
 	width: 0;
-	height: 65px;
+	height: 75px;
 	margin-left:-50%;
 	margin-top:-17px;
 	position: absolute;
@@ -92,10 +92,7 @@ body, html {
 	border-radius:3px;
 	z-index: -2;
 	transform: skew(20deg); 
-       -moz-transition: all 0.25s ease-in-out; 
-         -o-transition: all 0.25s ease-in-out; 
-    -webkit-transition: all 0.25s ease-in-out;
-        -ms-transition: all 0.25s ease-in-out;
+    transition: all 0.25s ease-in-out; 
 }
 
 .cta a:hover::before {
@@ -112,6 +109,8 @@ body, html {
 	color:#fff;
 	z-index:200;
 }
+
+
 
 #explore, #action {
 	opacity:1;
