@@ -31,13 +31,14 @@ body, html {
 }
 
 .infoText {
-	max-width:400px;
+	max-width:450px;
 	min-width:200px;
     margin-left:auto;
     margin-right:auto;
     margin-top:30px;
     margin-bottom:50px;
 }
+
 
 #whatDo {
 	min-height:25vh;
@@ -132,7 +133,7 @@ body, html {
 	margin-left:auto;
 	margin-right:auto;
 	text-align: center;
-	width:50%;
+	width:90%;
 }
 
 .planetsCard h3::after {
@@ -141,7 +142,7 @@ body, html {
 	bottom:-40%;
 	left:50%;
 	transform:translate(-50%);
-	width:100%;
+	width:50%;
 	border-bottom:1px solid rgb(213, 213, 213);
 }
 
@@ -413,7 +414,6 @@ h4 {
 }
 
 h5 {
-	text-align:center;
 	min-width:200px;
 	font-family:'futura-pt', sans-serif;
 	font-style:italic;
@@ -425,8 +425,8 @@ h5 {
 
 p {
 	font-family:'futura-pt', sans-serif;
-	font-size:1.125rem;
-	line-height:1.375rem;
+	font-size:1.25rem;
+	line-height:1.625rem;
 	position:relative;
 }
 
@@ -437,11 +437,9 @@ p {
 	color:#fff;
 }
 
-#exoExplore p, #takeAction p {
-	max-width:450px;
+#exoExplore .infoText, #takeAction .infoText {
 	margin-top:20px;
-	margin-left:auto;
-	margin-right:auto;
+	margin-bottom:0px;
 }
 
 p.detailText {
@@ -450,7 +448,7 @@ p.detailText {
 	margin-top:0px;
 }
 
-#firstReason, #secondReason, #thirdReason, #fourthReason, #fifthReason, #sixthReason {
+#whyCare .infoText div {
 	margin-top:50px;
 }
 
@@ -482,6 +480,15 @@ a {
 
 .flexContainer a {
 	margin-top:20px;
+}
+
+footer {
+	width:100%;
+	background-color:green;
+}
+
+footer p {
+	text-align:center;
 }
 
 @media handheld, only screen and (max-width: 767px) {
@@ -547,6 +554,7 @@ a {
 		background-color:rgb(245, 245, 245);
 		border-bottom-right-radius: 3px;
 		border-top-right-radius: 3px;
+		border-bottom-left-radius:3px;
 	}
 
 	.planetsInfo {
@@ -621,16 +629,16 @@ a {
 		margin-left:auto;
 		margin-right:auto;
 		text-align: center;
-		width:50%;
+		width:90%;
 	}
 
 	.planetsCard h3::after {
 		content:"";
+		width:50%;
 		position: absolute;
 		bottom:-40%;
 		left:50%;
 		transform:translate(-50%);
-		width:100%;
 		border-bottom:1px solid rgb(213, 213, 213);
 	}
 
