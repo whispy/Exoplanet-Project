@@ -4,18 +4,26 @@ $(document).ready(function () {
 	var action = $('#action');
 	var callToActionExplore = $('.cta a[href="#explore"]');
 	var callToActionAction = $('.cta a[href="#action"]');
+	var whatDoFromExplore = $('#whatDoFromExplore');
+	var whatDoFromAction = $('#whatDoFromAction');
 
 	explore.addClass('resetDiv');
 	action.addClass('resetDiv');
+	whatDoFromExplore.addClass('resetDiv');
+	whatDoFromAction.addClass('resetDiv');
 
 	callToActionExplore.on('click', function(){
 		explore.removeClass('resetDiv');
 		action.addClass('resetDiv');
+		whatDoFromExplore.removeClass('resetDiv');
+		whatDoFromAction.addClass('resetDiv');
 	})
 
 	callToActionAction.on('click', function(){
 		action.removeClass('resetDiv');
 		explore.addClass('resetDiv');
+		whatDoFromExplore.addClass('resetDiv');
+		whatDoFromAction.removeClass('resetDiv');
 	})
 
 

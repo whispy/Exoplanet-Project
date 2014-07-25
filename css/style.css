@@ -12,7 +12,9 @@ body, html {
 
 .resetDiv {
 	height: 0 !important;
+	min-height: 0 !important ;
 	overflow:hidden;
+	padding:0 0 !important ;
 	opacity:.5 !important ;
 	transition: opacity 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
 }
@@ -47,7 +49,7 @@ body, html {
 }
 
 
-#whatDo {
+#whatDo, #whatDoFromExplore, #whatDoFromAction {
 	min-height:25vh;
     height: auto;
 	width:100%;
@@ -58,7 +60,7 @@ body, html {
 	background-color:rgb(189, 24, 56);
 }
 
-#whatDo .flexContainer {
+#whatDo .flexContainer, #whatDoFromExplore .flexContainer, #whatDoFromAction .flexContainer {
 	margin-top:15px;
 }
 
@@ -517,7 +519,7 @@ hr {
 	margin-bottom:1px;
 }
 
-#visitedOne h1, #discoveredMany h1, #whatDo h2 {
+#visitedOne h1, #discoveredMany h1, #whatDo h2, #whatDoFromAction h2, #whatDoFromExplore h2 {
 	color:#fff;
 }
 
