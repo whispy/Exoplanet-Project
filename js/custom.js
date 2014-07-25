@@ -69,7 +69,9 @@ $(document).ready(function () {
 	    root.animate({
 	        scrollTop: offsetPlus
 	    }, 500, function () {
-	      window.location.href = href;
+	    	if((href.indexOf('#explore') > -1) || (href.indexOf('#action') > -1)) {
+	      		window.location.href = href;
+			}
 	    });
 	    return false;
 	});
