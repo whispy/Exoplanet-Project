@@ -7,7 +7,7 @@ function scrollToOnLoad(selector) {
 		root.animate({
 	    	scrollTop: hashPlus
 		}, 600, 'easeOutQuad');
-	}, 200)
+	}, 200);
 	return false;
 }
 
