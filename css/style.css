@@ -530,14 +530,18 @@ a {
 	color:rgb(189, 24, 56);
 }
 
+.hoverInfoMass {
+	cursor:help;
+}
+
 .hoverInfoMass::after {
 	content:"This will contain text describing what mjups actually are. mJUP is the amount of mustard in a standard can of Jelly Under Petroleum. If the amount is too high, then nothing will happen. Same if it is too low.";
-	background-color:rgb(160,160,160);
+	background-color:rgb(120,120,120);
 	height:auto;
 	width:400px;
 	position:absolute;
 	top:0%;
-	transform:translate(0%,-95%);
+	transform:translate(-7px,-95%);
 	padding:10px 10px;
 	opacity:0;
 	color:#fff;
@@ -553,6 +557,20 @@ a {
 .hoverInfoMass:hover::after {
 	opacity:1;
 	transition: all 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+sup, sub {
+   vertical-align: baseline;
+   position: relative;
+   top: -.45rem;
+}
+
+sub {
+	top:.45rem;
+}
+
+sup {
+	top:-.7rem;
 }
 
 footer {
