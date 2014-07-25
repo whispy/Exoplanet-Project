@@ -19,6 +19,10 @@ body, html {
 	transition: opacity 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
+.no-js #whatDoFromExplore, .no-js #whatDoFromAction {
+	display:none;
+}
+
 .content {
 }
 
