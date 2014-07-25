@@ -538,7 +538,7 @@ a {
 	content:"This will contain text describing what mjups actually are. mJUP is the amount of mustard in a standard can of Jelly Under Petroleum. If the amount is too high, then nothing will happen. Same if it is too low.";
 	background-color:rgb(120,120,120);
 	height:auto;
-	width:400px;
+	width:90%;
 	position:absolute;
 	top:0%;
 	transform:translate(-7px,-95%);
