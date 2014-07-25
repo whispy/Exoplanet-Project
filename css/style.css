@@ -135,8 +135,6 @@ noscript div p {
 	z-index:200;
 }
 
-
-
 #explore, #action {
 	opacity:1;
 	transition: opacity 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
@@ -228,6 +226,61 @@ noscript div p {
 	padding-left:40px;
 	padding-right:40px;
 	padding-bottom:15px;
+}
+
+#loadMore {
+	background-color:rgb(245, 245, 245);
+	box-shadow:0px 1px 2px rgb(170, 170, 170);
+	border-radius:3px;
+	width:200px;
+    height: 50px;
+	margin-top:20px;
+	margin-left:auto;
+	margin-right:auto;
+	transition: all 0.25s ease-in-out; 
+}
+
+#loadMore:hover {
+	width:210px;
+	height:60px;
+	margin-top:15px;
+	margin-bottom:-5px;
+	transition: all 0.25s ease-in-out; 
+}
+
+#loadMore:active {
+	width:200px;
+    height: 50px;
+	margin-top:20px;
+	margin-bottom:0px;
+	transition: all 0.08s ease-out;
+}
+
+#loadMore a {
+	display:block;
+	text-align:center;
+	font-size:1rem;
+	font-weight:500;
+	width:200px;
+	padding-top:12px;
+	height:38px;
+	transition: all 0.25s ease-in-out; 
+}
+
+#loadMore a:hover {
+	font-size:1.125rem;
+	padding-top:18px;
+	height:42px;
+	width:210px;
+	transition: all 0.25s ease-in-out; 
+}
+
+#loadMore a:active {
+	font-size:1rem;
+	padding-top:12px;
+	height:38px;
+	transition: all 0.08s ease-out;
+	margin-left:-4px;
 }
 
 .filterBar {
