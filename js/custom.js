@@ -1,11 +1,13 @@
-function scrollTo(selector) {
+function scrollToOnLoad(selector) {
 	var hash = $(selector);
 	var root = $('html, body');
 	var hashPlus = $(hash).offset().top;
 	root.scrollTop(0);
-	root.animate({
-	    scrollTop: hashPlus
-	}, 500);
+	setTimeout(function(){
+		root.animate({
+	    	scrollTop: hashPlus
+		}, 600, 'easeOutQuad');
+	}, 200)
 	return false;
 }
 
@@ -25,7 +27,6 @@ function actionClick() {
 
 $(document).ready(function () {
 
-	scrollTop: 0
 	explore = $('#explore');
 	action = $('#action');
 	callToActionExplore = $('.cta a[href="#explore"]');
@@ -38,6 +39,23 @@ $(document).ready(function () {
 	whatDoFromExplore.addClass('resetDiv');
 	whatDoFromAction.addClass('resetDiv');
 
+	if(window.location.href.indexOf('#whyCare') > -1){
+		var hash = window.location.hash;
+		scrollToOnLoad(hash);
+	}
+
+	if(window.location.href.indexOf('#action') > -1){
+		var hash = window.location.hash;
+		actionClick();
+		scrollToOnLoad(hash);
+	}
+
+	if(window.location.href.indexOf('#explore') > -1){
+		var hash = window.location.hash;
+		exploreClick();
+		scrollToOnLoad(hash);
+	}
+
 	callToActionExplore.on('click', function(){
 		exploreClick();
 	})
@@ -46,30 +64,14 @@ $(document).ready(function () {
 		actionClick();
 	})
 
-	console.log(window.location.href.indexOf('#action'))
-	if(window.location.href.indexOf('#action') > -1){
-		var hash =window.location.hash;
-		actionClick();
-		setTimeout(function(){
-			scrollTo(hash);
-		}, 200)
-		
-	}
-
-	if(window.location.href.indexOf('#explore') > -1){
-		var hash =window.location.hash;
-		exploreClick();
-		scrollTo(hash);
-	}
-
 	var root = $('html, body');
 	$('a').click(function() {
 	    var href = $.attr(this, 'href');
 	    var offsetPlus = $(href).offset().top + 1 + 'px';
 	    root.animate({
 	        scrollTop: offsetPlus
-	    }, 500, function () {
-	    	if((href.indexOf('#explore') > -1) || (href.indexOf('#action') > -1)) {
+	    }, 500, 'easeOutQuad', function () {
+	    	if((href.indexOf('#explore') > -1) || (href.indexOf('#action') > -1) || (href.indexOf('#whyCare') > -1)) {
 	      		window.location.href = href;
 			}
 	    });
