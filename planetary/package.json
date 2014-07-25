@@ -1,0 +1,12 @@
+{
+  "name"         : "planet-scrape",
+    "version"      : "0.0.1",
+    "description"  : "Scrape some planets.",
+    "main"         : "scrape.js",
+    "author"       : "Conlin Durbin",
+    "dependencies" : {
+      "fast-csv"    : "latest",
+      "request"    : "latest",
+      "firebase"    : "latest"
+    }
+}
