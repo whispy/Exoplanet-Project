@@ -241,10 +241,10 @@ noscript div p {
 }
 
 #loadMore:hover {
-	width:210px;
-	height:60px;
-	margin-top:15px;
-	margin-bottom:-5px;
+	width:206px;
+	height:56px;
+	margin-top:17px;
+	margin-bottom:-3px;
 	transition: all 0.25s ease-in-out; 
 }
 
@@ -268,10 +268,10 @@ noscript div p {
 }
 
 #loadMore a:hover {
-	font-size:1.125rem;
-	padding-top:18px;
-	height:42px;
-	width:210px;
+	font-size:19px;
+	padding-top:15px;
+	height:41px;
+	width:206px;
 	transition: all 0.25s ease-in-out; 
 }
 
