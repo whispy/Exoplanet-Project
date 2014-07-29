@@ -751,6 +751,13 @@ footer p {
 		text-align: left;
 	}
 
+	.hoverInfoMass::after, .hoverInfoTemp::after, .hoverInfoDiscovery::after {
+		top:20px;
+		left:0%;
+		transform:translate(0%,0%);
+		font-weight:400;
+	}
+
 }
 
 @media handheld, only screen and (max-width: 540px) {
@@ -783,8 +790,7 @@ footer p {
 	}
 
 	.planetsCard {
-		max-width:350px;
-		min-width:300px;
+		width:90%;
 		background-color:rgb(245, 245, 245);
 	}
 
