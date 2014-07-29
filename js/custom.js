@@ -34,6 +34,8 @@ $(document).ready(function () {
 	whatDoFromExplore = $('#whatDoFromExplore');
 	whatDoFromAction = $('#whatDoFromAction');
 
+	$('h1, p').widowFix();
+
 	explore.addClass('resetDiv');
 	action.addClass('resetDiv');
 	whatDoFromExplore.addClass('resetDiv');
