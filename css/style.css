@@ -346,7 +346,7 @@ noscript div p {
 
 	.earthOneAnimate {
 	  -webkit-animation-name: earthOneAnimate;
-	  animation: earthOneAnimate 2s 1;
+	  animation: earthOneAnimate 1000ms 1;
 	}
 
 	#earthContainer2, #earthContainer3, #earthContainer4, #earthContainer5, #earthContainer6, #earthContainer7, #earthContainer8, #earthContainer9, #earthContainer10, #earthContainer11, #earthContainer12, #earthContainer14, #earthContainer15, #earthContainer16 {

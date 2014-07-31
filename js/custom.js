@@ -37,12 +37,20 @@ $(document).ready(function () {
 	visitedOne = $('#visitedOne');
 	earth = $('.earth');
 	earth1 = $('#earth1');
+	earthContainerRight = [$('#earthContainer2'), $('#earthContainer5'), $('#earthContainer7'), $('#earthContainer9'), $('#earthContainer10'), $('#earthContainer5'), $('#earthContainer14'), $('#earthContainer16')];
+	earthContainerLeft = [$('#earthContainer3'), $('#earthContainer4'), $('#earthContainer6'), $('#earthContainer8'), $('#earthContainer11'), $('#earthContainer12'), $('#earthContainer15')];
 
 	$('h1, p').widowFix({
 		letterLimit: 10
 	});
 
 	earth1.addClass('resetDiv');
+	earthContainerRight.forEach(function(element) {
+		element.addClass('earthsRight');
+	});
+	earthContainerLeft.forEach(function(element) {
+		element.addClass('earthsLeft');
+	});
 	explore.addClass('resetDiv');
 	action.addClass('resetDiv');
 	whatDoFromExplore.addClass('resetDiv');
