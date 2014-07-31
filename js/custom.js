@@ -60,22 +60,24 @@ $(document).ready(function () {
 	whatDoFromExplore.addClass('resetDiv');
 	whatDoFromAction.addClass('resetDiv');
 
-	setTimeout(function(){
-		visitedOne.waypoint(function() {
+
+	visitedOne.waypoint(function() {
+		setTimeout(function(){
 			earth1.removeClass('resetDiv');
 			earth1.addClass('earthOneAnimate');
-		}, { offset: '50%'});
-	}, 1500);
+		}, 300);
+	}, { offset: '50%'});
+
 		
-		discoveredMany.waypoint(function() {
-			setTimeout(function(){
-				setTimeout(function() {
-					earth.removeClass('earthOpacity');
-				}, 300);
-				earth.removeClass('earthsLeft');
-				earth.removeClass('earthsRight');
+	discoveredMany.waypoint(function() {
+		setTimeout(function(){
+			setTimeout(function() {
+				earth.removeClass('earthOpacity');
 			}, 300);
-		}, { offset: '70%'});
+			earth.removeClass('earthsLeft');
+			earth.removeClass('earthsRight');
+		}, 100);
+	}, { offset: '70%'});
 
 
 	whatDo.waypoint(function() {
