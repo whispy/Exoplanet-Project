@@ -108,10 +108,12 @@ $(document).ready(function () {
 	}
 
 	callToActionExplore.on('click', function(){
+		_paq.push(['trackEvent', 'CallToAction', 'Explore']);
 		exploreClick();
 	})
 
 	callToActionAction.on('click', function(){
+		_paq.push(['trackEvent', 'CallToAction', 'Action']);
 		actionClick();
 	})
 
