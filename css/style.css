@@ -336,136 +336,142 @@ noscript div p {
 		transform: translate(-50%,-50%); 
 	}
 
-	#earth2 {
-		height:100px;
-		width:100px;
+	#earthContainer2, #earthContainer3, #earthContainer4, #earthContainer5, #earthContainer6, #earthContainer7, #earthContainer8, #earthContainer9, #earthContainer10, #earthContainer11, #earthContainer12, #earthContainer14, #earthContainer15, #earthContainer16 {
+		height:auto;
+		position:absolute;
+		transform: translate(-50%,-50%);
+		transition: all 600ms cubic-bezier(0.645, 0.045, 0.355, 1);
+	}
+
+	#earthContainer14, #earthContainer15, #earthContainer16 {
+		opacity:0;
+	}
+
+	#discoveredMany div.earthsLeft {
+		left:-100%;
+	}
+
+	#discoveredMany div.earthsRight {
+		left:200%;
+	}
+
+	#earth2, #earth3, #earth4, #earth5, #earth6, #earth7, #earth8, #earth9, #earth10, #earth11, #earth12, #earth14, #earth15, #earth16 {
+		width:100%;
 		background-color: rgb(160,160,160);
 		border-radius: 50%;
-		position:absolute;
-		text-align:center;
+		padding-bottom: 100%;
+	}
+
+	#earthContainer2 {
+		width:8%;
 		top:10%;
 		left:20%;
-		transform: translate(-50%,-50%); 
+	}
+
+	#earth2 {
+	}
+
+	#earthContainer3 {
+		width:10%;
+		top:67%;
+		left:76%;
 	}
 
 	#earth3 {
-		height:150px;
-		width:150px;
-		background-color: rgb(160,160,160);
-		border-radius: 50%;
-		position:absolute;
-		text-align:center;
-		top:67%;
-		left:76%;
-		transform: translate(-50%,-50%); 
+	}
+
+	#earthContainer4 {
+		width:20%;
+		top:80%;
+		left:36%;
 	}
 
 	#earth4 {
-		height:500px;
-		width:500px;
-		background-color: rgb(160,160,160);
-		border-radius: 50%;
-		position:absolute;
-		text-align:center;
-		top:80%;
-		left:36%;
-		transform: translate(-50%,-50%); 
+
+	}
+
+	#earthContainer5 {
+		width:13%;
+		top:10%;
+		left:89%;
 	}
 
 	#earth5 {
-		height:230px;
-		width:230px;
-		background-color: rgb(160,160,160);
-		border-radius: 50%;
-		position:absolute;
-		text-align:center;
-		top:10%;
-		left:89%;
-		transform: translate(-50%,-50%); 
+
+	}
+
+	#earthContainer6 {
+		width:4%;
+		top:45%;
+		left:5%;
 	}
 
 	#earth6 {
-		height:50px;
-		width:50px;
-		background-color: rgb(160,160,160);
-		border-radius: 50%;
-		position:absolute;
-		text-align:center;
-		top:45%;
-		left:5%;
-		transform: translate(-50%,-50%); 
+
+	}
+
+	#earthContainer7 {
+		width:21%;
+		top:25%;
+		left:2%;
 	}
 
 	#earth7 {
-		height:520px;
-		width:520px;
-		background-color: rgb(160,160,160);
-		border-radius: 50%;
-		position:absolute;
-		text-align:center;
-		top:25%;
-		left:-200px;
-		transform: translate(-50%,-50%); 
+
+	}
+
+	#earthContainer8 {
+		width:18%;
+		top:12%;
+		left:55%;
 	}
 
 	#earth8 {
-		height:170px;
-		width:170px;
-		background-color: rgb(160,160,160);
-		border-radius: 50%;
-		position:absolute;
-		text-align:center;
-		top:12%;
-		left:55%;
-		transform: translate(-50%,-50%); 
+
+	}
+
+	#earthContainer9 {
+		width:30%;
+		top:98%;
+		left:90%;
 	}
 
 	#earth9 {
-		height:210px;
-		width:210px;
-		background-color: rgb(160,160,160);
-		border-radius: 50%;
-		position:absolute;
-		text-align:center;
+
+	}
+
+	#earthContainer10 {
+		width:11%;
 		top:98%;
-		left:90%;
-		transform: translate(-50%,-50%); 
+		left:7%;
 	}
 
 	#earth10 {
-		height:310px;
-		width:310px;
-		background-color: rgb(160,160,160);
-		border-radius: 50%;
-		position:absolute;
-		text-align:center;
-		top:98%;
-		left:7%;
-		transform: translate(-50%,-50%); 
+
+	}
+
+	#earthContainer11 {
+		width:8%;
+		top:48%;
+		left:97%;
 	}
 
 	#earth11 {
-		height:189px;
-		width:189px;
-		background-color: rgb(160,160,160);
-		border-radius: 50%;
-		position:absolute;
-		text-align:center;
-		top:48%;
-		left:97%;
-		transform: translate(-50%,-50%); 
+
+	}
+
+	#earthContainer12 {
+		width:6%;
+		top:8%;
+		left:37%;
 	}
 
 	#earth12 {
-		height:260px;
-		width:260px;
-		background-color: rgb(160,160,160);
-		border-radius: 50%;
-		position:absolute;
-		text-align:center;
-		top:8%;
-		left:37%;
-		transform: translate(-50%,-50%); 
+
+	}
+
+	#earthContainer13 {
+
 	}
 
 	.earth13 {
@@ -691,6 +697,28 @@ footer p {
 		width:90%;
 	}
 
+	#earthContainer14, #earthContainer15, #earthContainer16 {
+		opacity:1;
+	}
+
+	#earthContainer14 {
+		width:17%;
+		top:31%;
+		left:60%;
+	}
+
+	#earthContainer15 {
+		width:13%;
+		top:65%;
+		left:26%;
+	}
+
+	#earthContainer16 {
+		width:10%;
+		top:38%;
+		left:30%;
+	}
+
 }
 
 
@@ -769,6 +797,11 @@ footer p {
 }
 
 @media handheld, only screen and (max-width: 540px) { /* mobile portrait */
+
+	#earth {
+		height:250px;
+		width:250px;
+	}
 
 	#firstReason, #secondReason, #thirdReason, #fourthReason, #fifthReason, #sixthReason {
 		margin-left:10%;
