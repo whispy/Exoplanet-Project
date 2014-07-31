@@ -33,22 +33,30 @@ $(document).ready(function () {
 	callToActionAction = $('.cta a[href="#action"]');
 	whatDoFromExplore = $('#whatDoFromExplore');
 	whatDoFromAction = $('#whatDoFromAction');
-	discoveredMany = $('a[href="#discoveredMany"]');
+	discoveredMany = $('#discoveredMany');
+	visitedOne = $('#visitedOne');
 	earth = $('.earth');
+	earth1 = $('#earth1');
 
 	$('h1, p').widowFix({
 		letterLimit: 10
 	});
 
+	earth1.addClass('resetDiv');
 	explore.addClass('resetDiv');
 	action.addClass('resetDiv');
 	whatDoFromExplore.addClass('resetDiv');
 	whatDoFromAction.addClass('resetDiv');
 
-	discoveredMany.on('click', function() {
+	visitedOne.waypoint(function() {
+		earth1.removeClass('resetDiv');
+		earth1.addClass('earthOneAnimate');
+	}, { offset: '50%'});
+
+	discoveredMany.waypoint(function() {
 		earth.removeClass('earthsLeft');
 		earth.removeClass('earthsRight');
-	})
+	}, { offset: '70%'});
 
 	if(window.location.href.indexOf('#whyCare') > -1){
 		var hash = window.location.hash;
