@@ -108,7 +108,7 @@ $(document).ready(function () {
 		scrollToOnLoad(hash);
 	}
 
-	whyCareButton..on('click', function(){
+	whyCareButton.on('click', function(){
 		_paq.push(['trackEvent', 'Slides', 'Scroll to: Why Should You Care?']);
 	})
 
