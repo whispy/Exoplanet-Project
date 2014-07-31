@@ -40,6 +40,7 @@ $(document).ready(function () {
 	cta = $('.cta');
 	discoveredManyEarth = $('#discoveredMany .earth');
 	visitedOneEarth = $('#visitedOne .earth');
+	visitedOneH1 = $('#visitedOne h1');
 	earth1 = $('#earth1');
 	earthContainerRight = [$('#earthContainer2'), $('#earthContainer5'), $('#earthContainer7'), $('#earthContainer9'), $('#earthContainer10'), $('#earthContainer5'), $('#earthContainer14'), $('#earthContainer16'), $('#earthContainer18'), $('#earthContainer20')];
 	earthContainerLeft = [$('#earthContainer3'), $('#earthContainer4'), $('#earthContainer6'), $('#earthContainer8'), $('#earthContainer11'), $('#earthContainer12'), $('#earthContainer15'), $('#earthContainer17'), $('#earthContainer19')];
@@ -58,6 +59,8 @@ $(document).ready(function () {
 		element.addClass('earthsLeft');
 	});
 	visitedOneEarth.addClass('earthOpacity');
+	visitedOneH1.addClass('earthOpacity');
+	visitedOneH1.addClass('noAnim');
 	discoveredManyEarth.addClass('earthOpacity');
 	explore.addClass('resetDiv');
 	action.addClass('resetDiv');
@@ -70,6 +73,9 @@ $(document).ready(function () {
 			visitedOneEarth.removeClass('earthOpacity');
 			earth1.removeClass('resetDiv');
 			earth1.addClass('earthOneAnimate');
+			visitedOneH1.removeClass('noAnim');
+			visitedOneH1.addClass('visitedOneH1Animate');
+			visitedOneH1.removeClass('earthOpacity');
 		}, 400);
 	}, { offset: '50%'});
 
