@@ -379,7 +379,6 @@ noscript div a {
 		height:auto;
 		position:absolute;
 		transform: translate(-50%,-50%);
-		transition: all 1800ms cubic-bezier(0.645, 0.045, 0.355, 1);
 	}
 
 	#earthContainer14, #earthContainer15, #earthContainer16 {
@@ -410,6 +409,7 @@ noscript div a {
 		width:8%;
 		top:10%;
 		left:20%;
+		transition: all 1800ms cubic-bezier(0.645, 0.045, 0.355, 1);
 	}
 
 	#earth2 {
@@ -419,6 +419,7 @@ noscript div a {
 		width:10%;
 		top:67%;
 		left:76%;
+		transition: all 1300ms cubic-bezier(0.645, 0.045, 0.355, 1);
 	}
 
 	#earth3 {
@@ -428,6 +429,7 @@ noscript div a {
 		width:20%;
 		top:80%;
 		left:36%;
+		transition: all 2000ms cubic-bezier(0.645, 0.045, 0.355, 1);
 	}
 
 	#earth4 {
@@ -438,6 +440,7 @@ noscript div a {
 		width:13%;
 		top:10%;
 		left:89%;
+		transition: all 1200ms cubic-bezier(0.645, 0.045, 0.355, 1);
 	}
 
 	#earth5 {
@@ -448,6 +451,7 @@ noscript div a {
 		width:4%;
 		top:45%;
 		left:5%;
+		transition: all 1400ms cubic-bezier(0.645, 0.045, 0.355, 1);
 	}
 
 	#earth6 {
@@ -458,6 +462,7 @@ noscript div a {
 		width:21%;
 		top:25%;
 		left:2%;
+		transition: all 1500ms cubic-bezier(0.645, 0.045, 0.355, 1);
 	}
 
 	#earth7 {
@@ -468,6 +473,7 @@ noscript div a {
 		width:18%;
 		top:12%;
 		left:55%;
+		transition: all 1800ms cubic-bezier(0.645, 0.045, 0.355, 1);
 	}
 
 	#earth8 {
@@ -478,6 +484,7 @@ noscript div a {
 		width:30%;
 		top:98%;
 		left:90%;
+		transition: all 1900ms cubic-bezier(0.645, 0.045, 0.355, 1);
 	}
 
 	#earth9 {
@@ -488,6 +495,7 @@ noscript div a {
 		width:11%;
 		top:98%;
 		left:7%;
+		transition: all 1200ms cubic-bezier(0.645, 0.045, 0.355, 1);
 	}
 
 	#earth10 {
@@ -498,6 +506,7 @@ noscript div a {
 		width:8%;
 		top:48%;
 		left:97%;
+		transition: all 2000ms cubic-bezier(0.645, 0.045, 0.355, 1);
 	}
 
 	#earth11 {
@@ -508,6 +517,7 @@ noscript div a {
 		width:6%;
 		top:8%;
 		left:37%;
+		transition: all 1800ms cubic-bezier(0.645, 0.045, 0.355, 1);
 	}
 
 	#earth12 {
