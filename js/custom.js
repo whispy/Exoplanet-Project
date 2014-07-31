@@ -35,6 +35,8 @@ $(document).ready(function () {
 	whatDoFromAction = $('#whatDoFromAction');
 	discoveredMany = $('#discoveredMany');
 	visitedOne = $('#visitedOne');
+	whatDo = $('#whatDo');
+	cta = $('.cta');
 	earth = $('.earth');
 	earth1 = $('#earth1');
 	earthContainerRight = [$('#earthContainer2'), $('#earthContainer5'), $('#earthContainer7'), $('#earthContainer9'), $('#earthContainer10'), $('#earthContainer5'), $('#earthContainer14'), $('#earthContainer16')];
@@ -65,6 +67,28 @@ $(document).ready(function () {
 		earth.removeClass('earthsLeft');
 		earth.removeClass('earthsRight');
 	}, { offset: '70%'});
+
+	whatDo.waypoint(function() {
+		cta.addClass('ctaEnterAnimate');
+		setTimeout(function(){
+				cta.removeClass("ctaEnterAnimate");
+		}, 1000);
+	}, { offset: '80%'});
+
+	whatDoFromExplore.waypoint(function() {
+		cta.addClass('ctaEnterAnimate');
+		setTimeout(function(){
+				cta.removeClass("ctaEnterAnimate");
+		}, 1000);
+	}, { offset: '80%'});
+
+	whatDoFromAction.waypoint(function() {
+		cta.addClass('ctaEnterAnimate');
+		setTimeout(function(){
+				cta.removeClass("ctaEnterAnimate");
+		}, 1000);
+	}, { offset: '80%'});
+
 
 	if(window.location.href.indexOf('#whyCare') > -1){
 		var hash = window.location.hash;
