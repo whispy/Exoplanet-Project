@@ -38,7 +38,8 @@ $(document).ready(function () {
 	whatDo = $('#whatDo');
 	whyCareButton = $('a[href="#whyCare"]');
 	cta = $('.cta');
-	earth = $('.earth');
+	discoveredManyEarth = $('#discoveredMany .earth');
+	visitedOneEarth = $('#visitedOne .earth');
 	earth1 = $('#earth1');
 	earthContainerRight = [$('#earthContainer2'), $('#earthContainer5'), $('#earthContainer7'), $('#earthContainer9'), $('#earthContainer10'), $('#earthContainer5'), $('#earthContainer14'), $('#earthContainer16'), $('#earthContainer18'), $('#earthContainer20')];
 	earthContainerLeft = [$('#earthContainer3'), $('#earthContainer4'), $('#earthContainer6'), $('#earthContainer8'), $('#earthContainer11'), $('#earthContainer12'), $('#earthContainer15'), $('#earthContainer17'), $('#earthContainer19')];
@@ -56,7 +57,8 @@ $(document).ready(function () {
 		element.addClass('noAnim');
 		element.addClass('earthsLeft');
 	});
-	earth.addClass('earthOpacity');
+	visitedOneEarth.addClass('earthOpacity');
+	discoveredManyEarth.addClass('earthOpacity');
 	explore.addClass('resetDiv');
 	action.addClass('resetDiv');
 	whatDoFromExplore.addClass('resetDiv');
@@ -65,20 +67,21 @@ $(document).ready(function () {
 
 	visitedOne.waypoint(function() {
 		setTimeout(function(){
+			visitedOneEarth.removeClass('earthOpacity');
 			earth1.removeClass('resetDiv');
 			earth1.addClass('earthOneAnimate');
-		}, 300);
+		}, 400);
 	}, { offset: '50%'});
 
 		
 	discoveredMany.waypoint(function() {
-		earth.removeClass('noAnim');
+		discoveredManyEarth.removeClass('noAnim');
 		setTimeout(function(){
 			setTimeout(function() {
-				earth.removeClass('earthOpacity');
+				discoveredManyEarth.removeClass('earthOpacity');
 			}, 300);
-			earth.removeClass('earthsLeft');
-			earth.removeClass('earthsRight');
+			discoveredManyEarth.removeClass('earthsLeft');
+			discoveredManyEarth.removeClass('earthsRight');
 		}, 100);
 	}, { offset: '70%'});
 

@@ -354,6 +354,10 @@ noscript div a {
 
 /* Earths */
 
+	#visitedOne .earth.earthOpacity {
+		opacity:0;
+	}
+
 	#earth1 {
 		height:300px;
 		width:300px;
@@ -364,6 +368,8 @@ noscript div a {
 		top:50%;
 		left:50%;
 		transform: translate(-50%,-50%); 
+		opacity:1;
+		transition: opacity 850ms cubic-bezier(0.645, 0.045, 0.355, 1);
 	}
 
 	@keyframes earthOneAnimate {
@@ -376,7 +382,7 @@ noscript div a {
 
 	.earthOneAnimate {
 	  -webkit-animation-name: earthOneAnimate;
-	  animation: earthOneAnimate 1000ms 1;
+	  animation: earthOneAnimate 1300ms cubic-bezier(0.645, 0.045, 0.355, 1) 1;
 	}
 
 	#earthContainer2, #earthContainer3, #earthContainer4, #earthContainer5, #earthContainer6, #earthContainer7, #earthContainer8, #earthContainer9, #earthContainer10, #earthContainer11, #earthContainer12, #earthContainer14, #earthContainer15, #earthContainer16, #earthContainer17, #earthContainer18, #earthContainer19, #earthContainer20 {
