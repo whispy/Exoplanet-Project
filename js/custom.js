@@ -36,6 +36,7 @@ $(document).ready(function () {
 	discoveredMany = $('#discoveredMany');
 	visitedOne = $('#visitedOne');
 	whatDo = $('#whatDo');
+	whyCareButton = $('a[href="#whyCare"]');
 	cta = $('.cta');
 	earth = $('.earth');
 	earth1 = $('#earth1');
@@ -107,13 +108,17 @@ $(document).ready(function () {
 		scrollToOnLoad(hash);
 	}
 
+	whyCareButton..on('click', function(){
+		_paq.push(['trackEvent', 'Slides', 'Scroll to: Why Should You Care?']);
+	})
+
 	callToActionExplore.on('click', function(){
-		_paq.push(['trackEvent', 'CallToAction', 'Explore']);
+		_paq.push(['trackEvent', 'Call To Action', 'Explore']);
 		exploreClick();
 	})
 
 	callToActionAction.on('click', function(){
-		_paq.push(['trackEvent', 'CallToAction', 'Action']);
+		_paq.push(['trackEvent', 'Call To Action', 'Action']);
 		actionClick();
 	})
 
