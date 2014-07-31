@@ -74,13 +74,13 @@ noscript div p {
 
 
 #whatDo, #whatDoFromExplore, #whatDoFromAction {
-	min-height:25vh;
+	min-height:25%;
     height: auto;
 	width:100%;
 	position:relative;
 	overflow:hidden;
-	padding-top:30px;
-	padding-bottom:30px;
+	padding-top:60px;
+	padding-bottom:60px;
 	background-color:rgb(189, 24, 56);
 }
 
@@ -293,11 +293,12 @@ noscript div p {
 
 #actionsGrid {
 	overflow: hidden;
-	min-height:75vh;
     height: auto;
 	width:100%;
 	position:relative;
 	padding-top:30px;
+	padding-bottom:20px;
+	background-color: rgb(213, 213, 213);
 }
 
 .actionsFlex {
@@ -514,15 +515,12 @@ h1 {
 	transform: translate(-50%,0%);
 }
 
-#visitedOne h1, #discoveredMany h1 {
-	
-}
-
 h2 {
 	position:relative;
 	font-family:'futura-pt', sans-serif;
 	font-weight:600;
 	font-size:1.625rem;
+	line-height:1.875rem;
 	text-align:center;
 }
 
@@ -676,16 +674,27 @@ footer p {
 	line-height:1.25rem;
 }
 
-@media handheld, only screen and (max-width: 767px) {
+@media handheld, only screen and (max-width: 777px) { /* mobile landscape */
 
 	#whyCare {
 		height:auto;
 	}
 
+	h2 {
+		margin-left:10%;
+		margin-right:10%;
+	}
+
+	.introSlide h1 {
+		font-size:1.875rem;
+		line-height:2.125rem;
+		width:90%;
+	}
+
 }
 
 
-@media handheld, only screen and (max-width: 854px) {
+@media handheld, only screen and (max-width: 854px) { /*tablet portrait */
 
 	.infoText:nth-child(1) {
 		margin-bottom:0px;
@@ -759,17 +768,11 @@ footer p {
 
 }
 
-@media handheld, only screen and (max-width: 540px) {
+@media handheld, only screen and (max-width: 540px) { /* mobile portrait */
 
 	#firstReason, #secondReason, #thirdReason, #fourthReason, #fifthReason, #sixthReason {
 		margin-left:10%;
 		margin-right:10%;
-	}
-
-	.introSlide h1 {
-		font-size:1.875rem;
-		line-height:2.125rem;
-		width:90%;
 	}
 
 	#exoExplore p, #takeAction p {
@@ -777,9 +780,9 @@ footer p {
 		margin-right:10%;
 	}
 
-	h2 {
-		margin-left:10%;
-		margin-right:10%;
+	#whatDo h2, #whatDoFromAction h2, #whatDoFromExplore h2 {
+		line-height:1.625rem;
+		font-size:1.375rem;
 	}
 
 	.cta {
