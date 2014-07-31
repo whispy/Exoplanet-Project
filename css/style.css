@@ -48,7 +48,7 @@ noscript div p {
 }
 
 #howManyVisited, #visitedOne, #howManyDiscovered, #discoveredMany {
-	height:96vh;
+	height:98%;
 	width:100%;
 	position:relative;
 	overflow:hidden;

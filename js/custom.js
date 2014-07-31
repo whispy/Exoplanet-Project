@@ -34,7 +34,9 @@ $(document).ready(function () {
 	whatDoFromExplore = $('#whatDoFromExplore');
 	whatDoFromAction = $('#whatDoFromAction');
 
-	$('h1, p').widowFix();
+	$('h1, p').widowFix({
+		letterLimit: 10
+	});
 
 	explore.addClass('resetDiv');
 	action.addClass('resetDiv');
