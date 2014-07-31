@@ -34,6 +34,7 @@ $(document).ready(function () {
 	whatDoFromExplore = $('#whatDoFromExplore');
 	whatDoFromAction = $('#whatDoFromAction');
 	discoveredMany = $('#discoveredMany');
+	discoveredManyH1 = $('#discoveredMany h1');
 	visitedOne = $('#visitedOne');
 	whatDo = $('#whatDo');
 	whyCareButton = $('a[href="#whyCare"]');
@@ -58,10 +59,12 @@ $(document).ready(function () {
 		element.addClass('noAnim');
 		element.addClass('earthsLeft');
 	});
+	discoveredManyH1.addClass('earthOpacity')
 	visitedOneEarth.addClass('earthOpacity');
 	visitedOneH1.addClass('earthOpacity');
-	visitedOneH1.addClass('noAnim');
 	discoveredManyEarth.addClass('earthOpacity');
+	visitedOneH1.addClass('noAnim');
+	discoveredManyH1.addClass('noAnim');
 	explore.addClass('resetDiv');
 	action.addClass('resetDiv');
 	whatDoFromExplore.addClass('resetDiv');
@@ -82,6 +85,7 @@ $(document).ready(function () {
 		
 	discoveredMany.waypoint(function() {
 		discoveredManyEarth.removeClass('noAnim');
+		discoveredManyH1.removeClass('noAnim');
 		setTimeout(function(){
 			setTimeout(function() {
 				discoveredManyEarth.removeClass('earthOpacity');
@@ -89,6 +93,9 @@ $(document).ready(function () {
 			discoveredManyEarth.removeClass('earthsLeft');
 			discoveredManyEarth.removeClass('earthsRight');
 		}, 100);
+		setTimeout(function(){
+			discoveredManyH1.removeClass('earthOpacity');
+		}, 2100)
 	}, { offset: '70%'});
 
 

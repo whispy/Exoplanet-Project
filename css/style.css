@@ -362,6 +362,15 @@ noscript div a {
 		opacity:0;
 	}
 
+	#discoveredMany h1.earthOpacity {
+		opacity:0;
+	}
+
+	#discoveredMany h1 {
+		transition: opacity 800ms cubic-bezier(0.645, 0.045, 0.355, 1);
+		opacity:1;
+	}
+
 	#visitedOne h1 {
 		transition: opacity 200ms cubic-bezier(0.645, 0.045, 0.355, 1);
 		opacity:1;
