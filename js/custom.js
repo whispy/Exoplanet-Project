@@ -49,9 +49,11 @@ $(document).ready(function () {
 
 	earth1.addClass('resetDiv');
 	earthContainerRight.forEach(function(element) {
+		element.addClass('noAnim');
 		element.addClass('earthsRight');
 	});
 	earthContainerLeft.forEach(function(element) {
+		element.addClass('noAnim');
 		element.addClass('earthsLeft');
 	});
 	earth.addClass('earthOpacity');
@@ -70,6 +72,7 @@ $(document).ready(function () {
 
 		
 	discoveredMany.waypoint(function() {
+		earth.removeClass('noAnim');
 		setTimeout(function(){
 			setTimeout(function() {
 				earth.removeClass('earthOpacity');

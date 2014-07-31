@@ -6,6 +6,10 @@ body, html {
 	display:none;
 }
 
+.noAnim {
+	transition: none !important;
+}
+
 noscript div {
 	width:100%;
 	height:auto;
