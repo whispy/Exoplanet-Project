@@ -379,7 +379,7 @@ noscript div a {
 		height:auto;
 		position:absolute;
 		transform: translate(-50%,-50%);
-		transition: all 800ms cubic-bezier(0.645, 0.045, 0.355, 1);
+		transition: all 1200ms cubic-bezier(0.645, 0.045, 0.355, 1);
 	}
 
 	#earthContainer14, #earthContainer15, #earthContainer16 {
@@ -394,11 +394,16 @@ noscript div a {
 		left:200%;
 	}
 
+	#discoveredMany .earth.earthOpacity {
+		opacity:0;
+	}
+
 	#earth2, #earth3, #earth4, #earth5, #earth6, #earth7, #earth8, #earth9, #earth10, #earth11, #earth12, #earth14, #earth15, #earth16 {
 		width:100%;
 		background-color: rgb(160,160,160);
 		border-radius: 50%;
 		padding-bottom: 100%;
+		opacity:1;
 	}
 
 	#earthContainer2 {
