@@ -155,7 +155,7 @@ $(document).ready(function () {
 	var root = $('html, body');
 	$('a').click(function() {
 	    var href = $.attr(this, 'href');
-	    var offsetPlus = $(href).offset().top + 1 + 'px';
+	    var offsetPlus = $(href).offset().top;
 	    root.animate({
 	        scrollTop: offsetPlus
 	    }, 500, 'easeOutQuad', function () {
