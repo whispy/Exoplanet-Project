@@ -53,6 +53,15 @@ $(document).ready(function () {
 		letterLimit: 10
 	});
 
+	$("#loadingIcon").circulate({
+	    speed: 400,                  // Speed of each quarter segment of animation, 1000 = 1 second
+	    height: 50,                 // Distance vertically to travel
+	    width: 200,                  // Distance horizontally to travel
+	    sizeAdjustment: 160,         // Percentage to grow or shrink
+	    loop: true,                 // Circulate continuously
+	    zIndexValues: [1, 1, 1, 1]   // Sets z-index value at each stop of animation
+	});
+
 	earth1.addClass('resetDiv');
 	earthContainerRight.forEach(function(element) {
 		element.addClass('noAnim');
@@ -171,6 +180,7 @@ $(document).ready(function () {
         
 
         function updateCards(planets, skip) {
+        	// hide loading icon here
           skip = skip || 1;
           console.log(planets);
           for(i=10*skip-10;i<10*skip;i++) {
