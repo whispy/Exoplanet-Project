@@ -53,13 +53,31 @@ $(document).ready(function () {
 		letterLimit: 10
 	});
 
-	$("#loadingIcon").circulate({
+	$("#loading1").circulate({
 	    speed: 400,                  // Speed of each quarter segment of animation, 1000 = 1 second
-	    height: 50,                 // Distance vertically to travel
+	    height: 20,                 // Distance vertically to travel
 	    width: 200,                  // Distance horizontally to travel
 	    sizeAdjustment: 160,         // Percentage to grow or shrink
 	    loop: true,                 // Circulate continuously
+	    zIndexValues: [-1, 2, 2, -1]   // Sets z-index value at each stop of animation
+	});
+
+	$("#loading2").circulate({
+	    speed: 400,                  // Speed of each quarter segment of animation, 1000 = 1 second
+	    height: 5,                 // Distance vertically to travel
+	    width: 5,                  // Distance horizontally to travel
+	    sizeAdjustment: 100,         // Percentage to grow or shrink
+	    loop: true,                 // Circulate continuously
 	    zIndexValues: [1, 1, 1, 1]   // Sets z-index value at each stop of animation
+	});
+
+	$("#loading3").circulate({
+	    speed: 300,                  // Speed of each quarter segment of animation, 1000 = 1 second
+	    height: 20,                 // Distance vertically to travel
+	    width: 300,                  // Distance horizontally to travel
+	    sizeAdjustment: 160,         // Percentage to grow or shrink
+	    loop: true,                 // Circulate continuously
+	    zIndexValues: [-1, 2, 2, -1]   // Sets z-index value at each stop of animation
 	});
 
 	earth1.addClass('resetDiv');
