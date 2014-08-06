@@ -14,6 +14,36 @@ function scrollToOnLoad(selector) {
 	return false;
 }
 
+function circulateStart() {
+
+		$("#loading1").circulate({
+		    speed: 400,                  // Speed of each quarter segment of animation, 1000 = 1 second
+		    height: 20,                 // Distance vertically to travel
+		    width: 200,                  // Distance horizontally to travel
+		    sizeAdjustment: 160,         // Percentage to grow or shrink
+		    loop: true,                 // Circulate continuously
+		    zIndexValues: [1, 3, 3, 1]   // Sets z-index value at each stop of animation
+		});
+
+		$("#loading2").circulate({
+		    speed: 400,                  // Speed of each quarter segment of animation, 1000 = 1 second
+		    height: 5,                 // Distance vertically to travel
+		    width: 5,                  // Distance horizontally to travel
+		    sizeAdjustment: 100,         // Percentage to grow or shrink
+		    loop: true,                 // Circulate continuously
+		    zIndexValues: [2, 2, 2, 2]   // Sets z-index value at each stop of animation
+		});
+
+		$("#loading3").circulate({
+		    speed: 300,                  // Speed of each quarter segment of animation, 1000 = 1 second
+		    height: 20,                 // Distance vertically to travel
+		    width: 300,                  // Distance horizontally to travel
+		    sizeAdjustment: 160,         // Percentage to grow or shrink
+		    loop: true,                 // Circulate continuously
+		    zIndexValues: [1,3, 3, 1]   // Sets z-index value at each stop of animation
+		});
+	}
+
 function exploreClick() {
 	explore.removeClass('resetDiv');
 	action.addClass('resetDiv');
@@ -53,32 +83,7 @@ $(document).ready(function () {
 		letterLimit: 10
 	});
 
-	$("#loading1").circulate({
-	    speed: 400,                  // Speed of each quarter segment of animation, 1000 = 1 second
-	    height: 20,                 // Distance vertically to travel
-	    width: 200,                  // Distance horizontally to travel
-	    sizeAdjustment: 160,         // Percentage to grow or shrink
-	    loop: true,                 // Circulate continuously
-	    zIndexValues: [-1, 2, 2, -1]   // Sets z-index value at each stop of animation
-	});
-
-	$("#loading2").circulate({
-	    speed: 400,                  // Speed of each quarter segment of animation, 1000 = 1 second
-	    height: 5,                 // Distance vertically to travel
-	    width: 5,                  // Distance horizontally to travel
-	    sizeAdjustment: 100,         // Percentage to grow or shrink
-	    loop: true,                 // Circulate continuously
-	    zIndexValues: [1, 1, 1, 1]   // Sets z-index value at each stop of animation
-	});
-
-	$("#loading3").circulate({
-	    speed: 300,                  // Speed of each quarter segment of animation, 1000 = 1 second
-	    height: 20,                 // Distance vertically to travel
-	    width: 300,                  // Distance horizontally to travel
-	    sizeAdjustment: 160,         // Percentage to grow or shrink
-	    loop: true,                 // Circulate continuously
-	    zIndexValues: [-1, 2, 2, -1]   // Sets z-index value at each stop of animation
-	});
+	circulateStart();
 
 	earth1.addClass('resetDiv');
 	earthContainerRight.forEach(function(element) {
@@ -196,9 +201,12 @@ $(document).ready(function () {
 	    return false;
 	});
         
-
+		//want to delay loading the cards until the user clicks on 'Explore Exoplanets' or if they load the page with '#explore'
         function updateCards(planets, skip) {
-        	//$('#loadingIcon').addClass('resetDiv');
+        	$('#loadingIconContainer').addClass('loadingIconReset');
+        	$("#loading1").circulate("Stop");
+			$("#loading2").circulate("Stop");
+			$("#loading3").circulate("Stop");
         	$('#loadMore').removeClass('resetDiv');
           skip = skip || 1;
           console.log(planets);
@@ -209,7 +217,7 @@ $(document).ready(function () {
                       "<div class=\"earth13\"></div>",
                       "</div>",
                       "<div class=\"planetsInfo cardRight\">",
-                      "<h5></h5>",
+                      "<h5>blah blah blah blah blah blah filler text until we get descriptive sentences hooked up</h5>",
                       "<h4><span class=\"hoverInfoDiscovery\">Discovery Method<sup>?</sup></span>:</h4>",
                       "<p class=\"detailText\" id=\"value1\">"+planets[i][13]+"</p>",
                       "<h4>Discovery Year:</h4>",
@@ -231,8 +239,11 @@ $(document).ready(function () {
         var planets = [];
         var skip = 1;
         $("#loadMore a").click(function() {
-          skip++;
-          updateCards(planets, skip);
+        	circulateStart();
+        	$('#loadingIconContainer').removeClass('loadingIconReset');
+			skip++;
+			//updateCards(planets, skip);
+			//$('#loadingIconContainer').addClass('loadingIconReset');
         });
 
         exoplanets.on('value', function(snap) {
