@@ -1,3 +1,6 @@
+var EXO_FIREBASE = "https://planetary.firebaseio.com/";
+var exoplanets = new Firebase(EXO_FIREBASE);
+
 function scrollToOnLoad(selector) {
 	var hash = $(selector);
 	var root = $('html, body');
@@ -165,5 +168,58 @@ $(document).ready(function () {
 	    });
 	    return false;
 	});
+        
 
+        function updateCards(planets, skip) {
+          skip = skip || 1;
+          console.log(planets);
+          for(i=10*skip-10;i<10*skip;i++) {
+            var card = ["<div class=\"content planetsCard\">",
+                      "<div class=\"cardLeft\">",
+                      "<h3 id=\"planet"+i+"\">"+planets[i][0]+"</h3>",
+                      "<div class=\"earth13\"></div>",
+                      "</div>",
+                      "<div class=\"planetsInfo cardRight\">",
+                      "<h5></h5>",
+                      "<h4><span class=\"hoverInfoDiscovery\">Discovery Method<sup>?</sup></span>:</h4>",
+                      "<p class=\"detailText\" id=\"value1\">"+planets[i][13]+"</p>",
+                      "<h4>Discovery Year:</h4>",
+                      "<p class=\"detailText\" id=\"value3\">"+planets[i][14]+"</p>",
+                      "<h4><span class=\"hoverInfoMass\">Mass (m<sub>JUP</sub>)<sup>?</sup></span>:</h4>",
+                      "<p class=\"detailText\" id=\"value2\">"+planets[i][3]+"</p>",
+                      "<h4><span class=\"hoverInfoTemp\">Temperature (K)<sup>?</sup></span>:</h4>",
+                      "<p class=\"detailText\" id=\"value2\">"+planets[i][11]+" K</p>",
+                      "<h4>Age:</h4>",
+                      "<p class=\"detailText\" id=\"value4\">"+planets[i][12]+"</p>",
+                      "<h4>Info heading:</h4>",
+                      "<p class=\"detailText\" id=\"value4\">Some informative text goes here</p>",
+                      "</div>",
+                      "</div>"].join('\n');
+            $(".planetsGrid .flexContainer").append(card);
+          }
+        }
+
+        var planets = [];
+        var skip = 1;
+        $("#loadMore a").click(function() {
+          skip++;
+          updateCards(planets, skip);
+        });
+
+        exoplanets.on('value', function(snap) {
+          var count = 0;
+          $.each(snap.val(), function(index, value) {
+            planets.push(value);
+            count++;
+          });
+          setHowMany(count);
+          updateCards(planets);
+        });
+
+        function setHowMany(planets) {
+          console.log(planets);
+          $("#howMany").html(function() {
+            return planets+" <br />";
+          });
+        }
 });
