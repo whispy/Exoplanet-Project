@@ -121,13 +121,18 @@ $(document).ready(function () {
 	discoveredMany.waypoint(function() {
 		discoveredManyEarth.removeClass('noAnim');
 		discoveredManyH1.removeClass('noAnim');
+		setTimeout(function() {
+			discoveredManyEarth.removeClass('earthOpacity');
+		},250)
 		setTimeout(function(){
-			setTimeout(function() {
-				discoveredManyEarth.removeClass('earthOpacity');
-			}, 300);
 			discoveredManyEarth.removeClass('earthsLeft');
 			discoveredManyEarth.removeClass('earthsRight');
-		}, 100);
+		}, 650);
+		setTimeout(function(){
+			$('.earthOutContainer1').addClass('rotateSlow');
+			$('.earthOutContainer2').addClass('rotateMed');
+			$('.earthOutContainer3').addClass('rotateFast');
+		}, 1700)
 		setTimeout(function(){
 			discoveredManyH1.removeClass('earthOpacity');
 		}, 2100)
