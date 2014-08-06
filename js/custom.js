@@ -206,7 +206,7 @@ $(document).ready(function () {
 	    return false;
 	});
         
-		//want to delay loading the cards until the user clicks on 'Explore Exoplanets' or if they load the page with '#explore'
+		//want to delay loading the cards until the user clicks on 'Explore Exoplanets' or if they load the page with '#explore' -> put it in exploreClick();
         function updateCards(planets, skip) {
         	$('#loadingIconContainer').addClass('loadingIconReset');
         	$("#loading1").circulate("Stop");
