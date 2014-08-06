@@ -180,7 +180,8 @@ $(document).ready(function () {
         
 
         function updateCards(planets, skip) {
-        	// hide loading icon here
+        	//$('#loadingIcon').addClass('resetDiv');
+        	$('#loadMore').removeClass('resetDiv');
           skip = skip || 1;
           console.log(planets);
           for(i=10*skip-10;i<10*skip;i++) {

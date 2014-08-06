@@ -256,6 +256,18 @@ noscript div a {
 	padding-right:40px;
 	padding-bottom:15px;
 }
+.content {
+	position:relative;
+}
+
+#loadingIcon {
+	width:20px;
+	height:20px;
+	background-color: red;
+	border-radius:50%;
+	top:0;
+	position:absolute;
+}
 
 #loadMore {
 	background-color:rgb(245, 245, 245);
