@@ -242,8 +242,8 @@ $(document).ready(function () {
         	circulateStart();
         	$('#loadingIconContainer').removeClass('loadingIconReset');
 			skip++;
-			//updateCards(planets, skip);
-			//$('#loadingIconContainer').addClass('loadingIconReset');
+			updateCards(planets, skip);
+			$('#loadingIconContainer').addClass('loadingIconReset');
         });
 
         exoplanets.on('value', function(snap) {
