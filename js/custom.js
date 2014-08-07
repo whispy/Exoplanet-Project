@@ -110,7 +110,7 @@ $(document).ready(function () {
 		isAndroid = /Android/i.test(navigator.userAgent),
 		isIE = document.documentMode;
 
-	var earthsCount = isMobile ? (isAndroid ? 40 : 60) : (isChrome ? 100 : 90),
+	var earthsCount = isMobile ? (isAndroid ? 40 : 60) : (isChrome ? 40 : 60),
 	earthsHtml = ""
 
 	for (var i = 0; i < earthsCount; i++) {
@@ -140,6 +140,16 @@ $(document).ready(function () {
 	function r (min, max) {
 	    return Math.floor(Math.random() * (max - min + 1)) + min;
 	}
+
+	function colorPicker() {
+		var colors = ['rgb(248,192,91)', 'rgb(189,24,56)', 'rgb(52,219,159)', 'rgb(219,139,52)', 'rgb(42,130,189)'];
+
+		$('.earthInner').each(function() {
+			$(this).css('background-color', colors[Math.floor(Math.random() * colors.length)]);
+		});
+	}
+
+	colorPicker();
 
 	circulateStart();
 
@@ -199,7 +209,7 @@ $(document).ready(function () {
 						function() { return r(-screenWidth, screenWidth) + '%' }
 					], 
 					translateY: [
-						function() { return r(-screenHeight, screenHeight*2) + '%' }
+						function() { return r(-screenHeight, screenHeight) + '%' }
 					],
 					width: [
 						function() { return r(1, 6) + '%' }
@@ -216,7 +226,7 @@ $(document).ready(function () {
 		}, 2000)
 		setTimeout(function(){
 			discoveredManyH1.removeClass('earthOpacity');
-		}, 2100)
+		}, 2500)
 	}, { offset: '70%'});
 
 	discoveredMany.waypoint(function(direction) {
@@ -260,7 +270,7 @@ $(document).ready(function () {
 		var hash = window.location.hash;
 		setTimeout(function() {
 			$('.earthOutContainer').velocity("stop");
-		}, 2100);
+		}, 2500);
 		scrollToOnLoad(hash);
 	}
 
@@ -268,7 +278,7 @@ $(document).ready(function () {
 		var hash = window.location.hash;
 		setTimeout(function() {
 			$('.earthOutContainer').velocity("stop");
-		}, 2100);
+		}, 2500);
 		actionClick();
 		scrollToOnLoad(hash);
 	}
@@ -277,7 +287,7 @@ $(document).ready(function () {
 		var hash = window.location.hash;
 		setTimeout(function() {
 			$('.earthOutContainer').velocity("stop");
-		}, 2100);
+		}, 2500);
 		exploreClick();
 		scrollToOnLoad(hash);
 	}
@@ -300,10 +310,8 @@ $(document).ready(function () {
 	    var href = $.attr(this, 'href');
 	    var hrefFunc = $(href)
 	    hrefFunc.velocity("scroll", {duration: 600, offset: 1});
-	    if((href.indexOf('#explore') > -1) || (href.indexOf('#action') > -1) || (href.indexOf('#whyCare') > -1)) {
-	    	$('.earthOutContainer').velocity("stop");
-	      	window.location.href = href;
-		}
+	    $('.earthOutContainer').velocity("stop");
+	    window.location.href = href;
 	    return false;
 	});
         
