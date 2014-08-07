@@ -104,6 +104,15 @@ $(window).load(function() {
 
 $(document).ready(function () {
 
+	var earthsCount = isMobile ? (isAndroid ? 40 : 60) : (isChrome ? 100 : 90),
+	earthsHtml = ""
+
+	for (var i = 0; i < earthsCount; i++) {
+		earthsHtml += "<div class='earthOutContainer'><div class='earthContainer earth'><div class='earthInner'></div></div></div>";
+	}
+
+	$(earthsHtml).prependTo(discoveredMany);
+
 	explore = $('#explore');
 	action = $('#action');
 	callToActionExplore = $('.cta a[href="#explore"]');
@@ -120,22 +129,27 @@ $(document).ready(function () {
 	visitedOneEarth = $('#visitedOne .earth');
 	visitedOneH1 = $('#visitedOne h1');
 	earth1 = $('#earth1');
-	earthContainerRight = [$('#earthContainer2'), $('#earthContainer5'), $('#earthContainer7'), $('#earthContainer9'), $('#earthContainer10'), $('#earthContainer5'), $('#earthContainer14'), $('#earthContainer16'), $('#earthContainer18'), $('#earthContainer20')];
-	earthContainerLeft = [$('#earthContainer3'), $('#earthContainer4'), $('#earthContainer6'), $('#earthContainer8'), $('#earthContainer11'), $('#earthContainer12'), $('#earthContainer15'), $('#earthContainer17'), $('#earthContainer19')];
+	earthContainer = $('.earthContainer')
+
+	function r (min, max) {
+	    return Math.floor(Math.random() * (max - min + 1)) + min;
+	}
+
+
+	var isWebkit = /Webkit/i.test(navigator.userAgent),
+		isChrome = /Chrome/i.test(navigator.userAgent),
+		isMobile = !!("ontouchstart" in window),
+		isAndroid = /Android/i.test(navigator.userAgent),
+		isIE = document.documentMode;
+
 
 
 
 	circulateStart();
 
 	earth1.addClass('resetDiv');
-	earthContainerRight.forEach(function(element) {
-		element.addClass('noAnim');
-		element.addClass('earthsSmall');
-	});
-	earthContainerLeft.forEach(function(element) {
-		element.addClass('noAnim');
-		element.addClass('earthsSmall');
-	});
+	earthContainer.addClass('noAnim');
+	earthContainer.addClass('earthsPop');
 	discoveredManyH1.addClass('earthOpacity')
 	visitedOneEarth.addClass('earthOpacity');
 	visitedOneH1.addClass('earthOpacity');
@@ -159,6 +173,9 @@ $(document).ready(function () {
 		}, 400);
 	}, { offset: '50%'});
 
+	var screenWidth = window.screen.availWidth;
+	var screenHeight = window.screen.availHeight;
+
 		
 	discoveredMany.waypoint(function() {
 		discoveredManyEarth.removeClass('noAnim');
@@ -167,13 +184,34 @@ $(document).ready(function () {
 			discoveredManyEarth.removeClass('earthOpacity');
 		},650)
 		setTimeout(function(){
-			discoveredManyEarth.removeClass('earthsSmall');
-			discoveredManyEarth.removeClass('earthsSmall');
+			
+			//console.log(r(0, 50) + '%')
+			/*$('.earthOutContainer')
+				.velocity({
+					translateX: [
+						function() { return r(0, 100) + '%'}
+					]
+				})*/
+			$('.earthsPop')
+				.velocity({	
+					translateX: [ 
+						function() { return r(0, screenWidth) + '%' }
+					], 
+					translateY: [
+						function() { return r(0, screenHeight) + '%' }
+					],
+					width: [
+						function() { return r(1, 6) + '%' }
+ 					],
+				}, 1000)
 		}, 650);
 		setTimeout(function(){
-				$('.earthOutContainer1').velocity({rotateZ: '-3600deg'}, 100000, "linear");
-				$('.earthOutContainer2').velocity({rotateZ: '-3600deg', left: '5%'}, 80000, "linear");
-				$('.earthOutContainer3').velocity({rotateZ: '-3600deg', left: '20%'}, 60000, "linear");
+				$('.earthOutContainer')
+					.velocity({
+						rotateZ: [
+							function() {return r(-3600, -6000)}
+						]
+					}, 180000, "linear");
 		}, 2000)
 		setTimeout(function(){
 			discoveredManyH1.removeClass('earthOpacity');
@@ -182,15 +220,11 @@ $(document).ready(function () {
 
 	discoveredMany.waypoint(function(direction) {
   		if (direction === 'down') {
-  			$('.earthOutContainer1').velocity("stop");
-			$('.earthOutContainer2').velocity("stop");
-			$('.earthOutContainer3').velocity("stop");
+  			$('.earthOutContainer').velocity("stop");
   		}
 
   		else {
-  			$('.earthOutContainer1').velocity({rotateZ: '-3600deg'}, 100000, "linear");
-			$('.earthOutContainer2').velocity({rotateZ: '-3600deg', left: '5%'}, 80000, "linear");
-			$('.earthOutContainer3').velocity({rotateZ: '-3600deg', left: '20%'}, 60000, "linear");
+  			$('.earthOutContainer').velocity({rotateZ: '-3600deg'}, 100000, "linear");
   		}
 	}, {
   		offset: function() {
@@ -224,9 +258,7 @@ $(document).ready(function () {
 	if(window.location.href.indexOf('#whyCare') > -1){
 		var hash = window.location.hash;
 		setTimeout(function() {
-			$('.earthOutContainer1').velocity("stop");
-			$('.earthOutContainer2').velocity("stop");
-			$('.earthOutContainer3').velocity("stop");
+			$('.earthOutContainer').velocity("stop");
 		}, 2100);
 		scrollToOnLoad(hash);
 	}
@@ -234,9 +266,7 @@ $(document).ready(function () {
 	if(window.location.href.indexOf('#action') > -1){
 		var hash = window.location.hash;
 		setTimeout(function() {
-			$('.earthOutContainer1').velocity("stop");
-			$('.earthOutContainer2').velocity("stop");
-			$('.earthOutContainer3').velocity("stop");
+			$('.earthOutContainer').velocity("stop");
 		}, 2100);
 		actionClick();
 		scrollToOnLoad(hash);
@@ -245,9 +275,7 @@ $(document).ready(function () {
 	if(window.location.href.indexOf('#explore') > -1){
 		var hash = window.location.hash;
 		setTimeout(function() {
-			$('.earthOutContainer1').velocity("stop");
-			$('.earthOutContainer2').velocity("stop");
-			$('.earthOutContainer3').velocity("stop");
+			$('.earthOutContainer').velocity("stop");
 		}, 2100);
 		exploreClick();
 		scrollToOnLoad(hash);
@@ -272,9 +300,7 @@ $(document).ready(function () {
 	    var hrefFunc = $(href)
 	    hrefFunc.velocity("scroll", {duration: 600, offset: 1});
 	    if((href.indexOf('#explore') > -1) || (href.indexOf('#action') > -1) || (href.indexOf('#whyCare') > -1)) {
-	    	$('.earthOutContainer1').velocity("stop");
-			$('.earthOutContainer2').velocity("stop");
-			$('.earthOutContainer3').velocity("stop");
+	    	$('.earthOutContainer').velocity("stop");
 	      	window.location.href = href;
 		}
 	    return false;
