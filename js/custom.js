@@ -123,7 +123,7 @@ $(document).ready(function () {
 		discoveredManyH1.removeClass('noAnim');
 		setTimeout(function() {
 			discoveredManyEarth.removeClass('earthOpacity');
-		},250)
+		},650)
 		setTimeout(function(){
 			discoveredManyEarth.removeClass('earthsLeft');
 			discoveredManyEarth.removeClass('earthsRight');
@@ -132,11 +132,29 @@ $(document).ready(function () {
 			$('.earthOutContainer1').addClass('rotateSlow');
 			$('.earthOutContainer2').addClass('rotateMed');
 			$('.earthOutContainer3').addClass('rotateFast');
-		}, 1700)
+		}, 1650)
 		setTimeout(function(){
 			discoveredManyH1.removeClass('earthOpacity');
 		}, 2100)
 	}, { offset: '70%'});
+
+	discoveredMany.waypoint(function(direction) {
+  		if (direction === 'down') {
+  			$('.earthOutContainer1').removeClass('rotateSlow');
+			$('.earthOutContainer2').removeClass('rotateMed');
+			$('.earthOutContainer3').removeClass('rotateFast');
+  		}
+
+  		else {
+  			$('.earthOutContainer1').addClass('rotateSlow');
+			$('.earthOutContainer2').addClass('rotateMed');
+			$('.earthOutContainer3').addClass('rotateFast');
+  		}
+	}, {
+  		offset: function() {
+    	return -$(this).height();
+  		}
+	});
 
 
 	whatDo.waypoint(function() {

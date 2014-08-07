@@ -528,6 +528,7 @@ noscript div a {
 	}
 
 	.earthOutContainer1, .earthOutContainer2, .earthOutContainer3 {
+		transition: all 5000ms linear;
 		width:70%;
 		height:100%;
 		position:absolute;
