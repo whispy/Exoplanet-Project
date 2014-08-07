@@ -4,14 +4,7 @@ var exoplanets = new Firebase(EXO_FIREBASE);
 
 function scrollToOnLoad(selector) {
 	var hash = $(selector);
-	var root = $('html, body');
-	var hashPlus = $(hash).offset().top;
-	root.scrollTop(0);
-	setTimeout(function(){
-		root.animate({
-	    	scrollTop: hashPlus
-		}, 600, 'easeOutQuad');
-	}, 200);
+	hash.velocity("scroll", {duration: 600, offset: 2});
 	return false;
 }
 
@@ -104,6 +97,12 @@ function actionClick() {
 	whatDoFromAction.removeClass('resetDiv');
 }
 
+$(window).load(function() {
+	$('h1, p').widowFix({
+		letterLimit: 10
+	});
+});
+
 $(document).ready(function () {
 
 	explore = $('#explore');
@@ -125,9 +124,7 @@ $(document).ready(function () {
 	earthContainerRight = [$('#earthContainer2'), $('#earthContainer5'), $('#earthContainer7'), $('#earthContainer9'), $('#earthContainer10'), $('#earthContainer5'), $('#earthContainer14'), $('#earthContainer16'), $('#earthContainer18'), $('#earthContainer20')];
 	earthContainerLeft = [$('#earthContainer3'), $('#earthContainer4'), $('#earthContainer6'), $('#earthContainer8'), $('#earthContainer11'), $('#earthContainer12'), $('#earthContainer15'), $('#earthContainer17'), $('#earthContainer19')];
 
-	$('h1, p').widowFix({
-		letterLimit: 10
-	});
+
 
 	circulateStart();
 
@@ -175,9 +172,9 @@ $(document).ready(function () {
 			discoveredManyEarth.removeClass('earthsRight');
 		}, 650);
 		setTimeout(function(){
-			$('.earthOutContainer1').addClass('rotateSlow');
-			$('.earthOutContainer2').addClass('rotateMed');
-			$('.earthOutContainer3').addClass('rotateFast');
+				$('.earthOutContainer1').velocity({rotateZ: '-3600deg'}, 100000, "linear");
+				$('.earthOutContainer2').velocity({rotateZ: '-3600deg', left: '5%'}, 80000, "linear");
+				$('.earthOutContainer3').velocity({rotateZ: '-3600deg', left: '20%'}, 60000, "linear");
 		}, 2000)
 		setTimeout(function(){
 			discoveredManyH1.removeClass('earthOpacity');
@@ -186,21 +183,21 @@ $(document).ready(function () {
 
 	discoveredMany.waypoint(function(direction) {
   		if (direction === 'down') {
-  			$('.earthOutContainer1').removeClass('rotateSlow');
-			$('.earthOutContainer2').removeClass('rotateMed');
-			$('.earthOutContainer3').removeClass('rotateFast');
+  			$('.earthOutContainer1').velocity("stop");
+			$('.earthOutContainer2').velocity("stop");
+			$('.earthOutContainer3').velocity("stop");
   		}
 
   		else {
-  			$('.earthOutContainer1').addClass('rotateSlow');
-			$('.earthOutContainer2').addClass('rotateMed');
-			$('.earthOutContainer3').addClass('rotateFast');
+  			$('.earthOutContainer1').velocity({rotateZ: '-3600deg'}, 100000, "linear");
+			$('.earthOutContainer2').velocity({rotateZ: '-3600deg', left: '5%'}, 80000, "linear");
+			$('.earthOutContainer3').velocity({rotateZ: '-3600deg', left: '20%'}, 60000, "linear");
   		}
 	}, {
   		offset: function() {
     		return -$(this).height();
   		}
-		});
+	});
 
 
 	whatDo.waypoint(function() {
@@ -227,17 +224,32 @@ $(document).ready(function () {
 
 	if(window.location.href.indexOf('#whyCare') > -1){
 		var hash = window.location.hash;
+		setTimeout(function() {
+			$('.earthOutContainer1').velocity("stop");
+			$('.earthOutContainer2').velocity("stop");
+			$('.earthOutContainer3').velocity("stop");
+		}, 2100);
 		scrollToOnLoad(hash);
 	}
 
 	if(window.location.href.indexOf('#action') > -1){
 		var hash = window.location.hash;
+		setTimeout(function() {
+			$('.earthOutContainer1').velocity("stop");
+			$('.earthOutContainer2').velocity("stop");
+			$('.earthOutContainer3').velocity("stop");
+		}, 2100);
 		actionClick();
 		scrollToOnLoad(hash);
 	}
 
 	if(window.location.href.indexOf('#explore') > -1){
 		var hash = window.location.hash;
+		setTimeout(function() {
+			$('.earthOutContainer1').velocity("stop");
+			$('.earthOutContainer2').velocity("stop");
+			$('.earthOutContainer3').velocity("stop");
+		}, 2100);
 		exploreClick();
 		scrollToOnLoad(hash);
 	}
@@ -256,17 +268,16 @@ $(document).ready(function () {
 		actionClick();
 	})
 
-	var root = $('html, body');
 	$('a').click(function() {
 	    var href = $.attr(this, 'href');
-	    var offsetPlus = $(href).offset().top;
-	    root.animate({
-	        scrollTop: offsetPlus
-	    }, 500, 'easeOutQuad', function () {
-	    	if((href.indexOf('#explore') > -1) || (href.indexOf('#action') > -1) || (href.indexOf('#whyCare') > -1)) {
-	      		window.location.href = href;
-			}
-	    });
+	    var hrefFunc = $(href)
+	    hrefFunc.velocity("scroll", {duration: 600, offset: 1});
+	    if((href.indexOf('#explore') > -1) || (href.indexOf('#action') > -1) || (href.indexOf('#whyCare') > -1)) {
+	    	$('.earthOutContainer1').velocity("stop");
+			$('.earthOutContainer2').velocity("stop");
+			$('.earthOutContainer3').velocity("stop");
+	      	window.location.href = href;
+		}
 	    return false;
 	});
         
