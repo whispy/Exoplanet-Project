@@ -1,6 +1,7 @@
 var EXO_FIREBASE = "https://planetary.firebaseio.com/";
 var exoplanets = new Firebase(EXO_FIREBASE);
 
+
 function scrollToOnLoad(selector) {
 	var hash = $(selector);
 	var root = $('html, body');
@@ -44,7 +45,52 @@ function circulateStart() {
 		});
 	}
 
+
+function updateCards(planets, skip) {
+        	console.log('hello')
+        	$('#loadingIconContainer').addClass('loadingIconReset');
+        	$("#loading1").circulate("Stop");
+			$("#loading2").circulate("Stop");
+			$("#loading3").circulate("Stop");
+        	$('#loadMore').removeClass('resetDiv');
+          skip = skip || 1;
+          console.log(planets);
+          for(i=10*skip-10;i<10*skip;i++) {
+            var card = ["<div class=\"content planetsCard\">",
+                      "<div class=\"cardLeft\">",
+                      "<h3 id=\"planet"+i+"\">"+planets[i][0]+"</h3>",
+                      "<div class=\"earth13\"></div>",
+                      "</div>",
+                      "<div class=\"planetsInfo cardRight\">",
+                      "<h5>blah blah blah blah blah blah filler text until we get descriptive sentences hooked up</h5>",
+                      "<h4><span class=\"hoverInfoDiscovery\">Discovery Method<sup>?</sup></span>:</h4>",
+                      "<p class=\"detailText\" id=\"value1\">"+planets[i][13]+"</p>",
+                      "<h4>Discovery Year:</h4>",
+                      "<p class=\"detailText\" id=\"value3\">"+planets[i][14]+"</p>",
+                      "<h4><span class=\"hoverInfoMass\">Mass (m<sub>JUP</sub>)<sup>?</sup></span>:</h4>",
+                      "<p class=\"detailText\" id=\"value2\">"+planets[i][3]+"</p>",
+                      "<h4><span class=\"hoverInfoTemp\">Temperature (K)<sup>?</sup></span>:</h4>",
+                      "<p class=\"detailText\" id=\"value2\">"+planets[i][11]+" K</p>",
+                      "<h4>Age:</h4>",
+                      "<p class=\"detailText\" id=\"value4\">"+planets[i][12]+"</p>",
+                      "<h4>Info heading:</h4>",
+                      "<p class=\"detailText\" id=\"value4\">Some informative text goes here</p>",
+                      "</div>",
+                      "</div>"].join('\n');
+            $(".planetsGrid .flexContainer").append(card);
+          }
+        }
+
 function exploreClick() {
+	var planets = [];
+	exoplanets.on('value', function(snap) {
+		var count = 0;
+          $.each(snap.val(), function(index, value) {
+            planets.push(value);
+            count++;
+          });
+		updateCards(planets);
+	});
 	explore.removeClass('resetDiv');
 	action.addClass('resetDiv');
 	whatDoFromExplore.removeClass('resetDiv');
@@ -132,7 +178,7 @@ $(document).ready(function () {
 			$('.earthOutContainer1').addClass('rotateSlow');
 			$('.earthOutContainer2').addClass('rotateMed');
 			$('.earthOutContainer3').addClass('rotateFast');
-		}, 1650)
+		}, 2000)
 		setTimeout(function(){
 			discoveredManyH1.removeClass('earthOpacity');
 		}, 2100)
@@ -152,29 +198,29 @@ $(document).ready(function () {
   		}
 	}, {
   		offset: function() {
-    	return -$(this).height();
+    		return -$(this).height();
   		}
-	});
+		});
 
 
 	whatDo.waypoint(function() {
 		cta.addClass('ctaEnterAnimate');
 		setTimeout(function(){
-				cta.removeClass("ctaEnterAnimate");
+			cta.removeClass("ctaEnterAnimate");
 		}, 1000);
 	}, { offset: '80%'});
 
 	whatDoFromExplore.waypoint(function() {
 		cta.addClass('ctaEnterAnimate');
 		setTimeout(function(){
-				cta.removeClass("ctaEnterAnimate");
+			cta.removeClass("ctaEnterAnimate");
 		}, 1000);
 	}, { offset: '80%'});
 
 	whatDoFromAction.waypoint(function() {
 		cta.addClass('ctaEnterAnimate');
 		setTimeout(function(){
-				cta.removeClass("ctaEnterAnimate");
+			cta.removeClass("ctaEnterAnimate");
 		}, 1000);
 	}, { offset: '80%'});
 
@@ -224,65 +270,29 @@ $(document).ready(function () {
 	    return false;
 	});
         
-		//want to delay loading the cards until the user clicks on 'Explore Exoplanets' or if they load the page with '#explore' -> put it in exploreClick();
-        function updateCards(planets, skip) {
-        	$('#loadingIconContainer').addClass('loadingIconReset');
-        	$("#loading1").circulate("Stop");
-			$("#loading2").circulate("Stop");
-			$("#loading3").circulate("Stop");
-        	$('#loadMore').removeClass('resetDiv');
-          skip = skip || 1;
-          console.log(planets);
-          for(i=10*skip-10;i<10*skip;i++) {
-            var card = ["<div class=\"content planetsCard\">",
-                      "<div class=\"cardLeft\">",
-                      "<h3 id=\"planet"+i+"\">"+planets[i][0]+"</h3>",
-                      "<div class=\"earth13\"></div>",
-                      "</div>",
-                      "<div class=\"planetsInfo cardRight\">",
-                      "<h5>blah blah blah blah blah blah filler text until we get descriptive sentences hooked up</h5>",
-                      "<h4><span class=\"hoverInfoDiscovery\">Discovery Method<sup>?</sup></span>:</h4>",
-                      "<p class=\"detailText\" id=\"value1\">"+planets[i][13]+"</p>",
-                      "<h4>Discovery Year:</h4>",
-                      "<p class=\"detailText\" id=\"value3\">"+planets[i][14]+"</p>",
-                      "<h4><span class=\"hoverInfoMass\">Mass (m<sub>JUP</sub>)<sup>?</sup></span>:</h4>",
-                      "<p class=\"detailText\" id=\"value2\">"+planets[i][3]+"</p>",
-                      "<h4><span class=\"hoverInfoTemp\">Temperature (K)<sup>?</sup></span>:</h4>",
-                      "<p class=\"detailText\" id=\"value2\">"+planets[i][11]+" K</p>",
-                      "<h4>Age:</h4>",
-                      "<p class=\"detailText\" id=\"value4\">"+planets[i][12]+"</p>",
-                      "<h4>Info heading:</h4>",
-                      "<p class=\"detailText\" id=\"value4\">Some informative text goes here</p>",
-                      "</div>",
-                      "</div>"].join('\n');
-            $(".planetsGrid .flexContainer").append(card);
-          }
-        }
+	var planets = [];
+	var skip = 1;
+	$("#loadMore a").click(function() {
+        circulateStart();
+        $('#loadingIconContainer').removeClass('loadingIconReset');
+		skip++;
+		updateCards(planets, skip);
+		$('#loadingIconContainer').addClass('loadingIconReset');
+	});
 
-        var planets = [];
-        var skip = 1;
-        $("#loadMore a").click(function() {
-        	circulateStart();
-        	$('#loadingIconContainer').removeClass('loadingIconReset');
-			skip++;
-			updateCards(planets, skip);
-			$('#loadingIconContainer').addClass('loadingIconReset');
-        });
+	exoplanets.on('value', function(snap) {
+		var count = 0;
+		$.each(snap.val(), function(index, value) {
+			planets.push(value);
+			count++;
+		});
+		setHowMany(count);
+	});
 
-        exoplanets.on('value', function(snap) {
-          var count = 0;
-          $.each(snap.val(), function(index, value) {
-            planets.push(value);
-            count++;
-          });
-          setHowMany(count);
-          updateCards(planets);
-        });
-
-        function setHowMany(planets) {
-          console.log(planets);
-          $("#howMany").html(function() {
-            return planets+" <br />";
-          });
-        }
+	function setHowMany(planets) {
+		console.log(planets);
+		$("#howMany").html(function() {
+			return planets+" <br />";
+		});
+	}
 });
