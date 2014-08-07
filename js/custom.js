@@ -130,11 +130,11 @@ $(document).ready(function () {
 	earth1.addClass('resetDiv');
 	earthContainerRight.forEach(function(element) {
 		element.addClass('noAnim');
-		element.addClass('earthsRight');
+		element.addClass('earthsSmall');
 	});
 	earthContainerLeft.forEach(function(element) {
 		element.addClass('noAnim');
-		element.addClass('earthsLeft');
+		element.addClass('earthsSmall');
 	});
 	discoveredManyH1.addClass('earthOpacity')
 	visitedOneEarth.addClass('earthOpacity');
@@ -167,8 +167,8 @@ $(document).ready(function () {
 			discoveredManyEarth.removeClass('earthOpacity');
 		},650)
 		setTimeout(function(){
-			discoveredManyEarth.removeClass('earthsLeft');
-			discoveredManyEarth.removeClass('earthsRight');
+			discoveredManyEarth.removeClass('earthsSmall');
+			discoveredManyEarth.removeClass('earthsSmall');
 		}, 650);
 		setTimeout(function(){
 				$('.earthOutContainer1').velocity({rotateZ: '-3600deg'}, 100000, "linear");
