@@ -40,7 +40,6 @@ function circulateStart() {
 
 
 function updateCards(planets, skip) {
-        	console.log('hello')
         	$('#loadingIconContainer').addClass('loadingIconReset');
         	$("#loading1").circulate("Stop");
 			$("#loading2").circulate("Stop");
