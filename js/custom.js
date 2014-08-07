@@ -104,6 +104,12 @@ $(window).load(function() {
 
 $(document).ready(function () {
 
+	var isWebkit = /Webkit/i.test(navigator.userAgent),
+		isChrome = /Chrome/i.test(navigator.userAgent),
+		isMobile = !!("ontouchstart" in window),
+		isAndroid = /Android/i.test(navigator.userAgent),
+		isIE = document.documentMode;
+
 	var earthsCount = isMobile ? (isAndroid ? 40 : 60) : (isChrome ? 100 : 90),
 	earthsHtml = ""
 
@@ -135,16 +141,6 @@ $(document).ready(function () {
 	    return Math.floor(Math.random() * (max - min + 1)) + min;
 	}
 
-
-	var isWebkit = /Webkit/i.test(navigator.userAgent),
-		isChrome = /Chrome/i.test(navigator.userAgent),
-		isMobile = !!("ontouchstart" in window),
-		isAndroid = /Android/i.test(navigator.userAgent),
-		isIE = document.documentMode;
-
-
-
-
 	circulateStart();
 
 	earth1.addClass('resetDiv');
@@ -174,10 +170,15 @@ $(document).ready(function () {
 	}, { offset: '50%'});
 
 	var screenWidth = window.screen.availWidth;
+	var docWidth = $(window).width();
 	var screenHeight = window.screen.availHeight;
 
 		
 	discoveredMany.waypoint(function() {
+		$('.earthOutContainer').css({
+			width: docWidth,
+			heiht: screenHeight,
+		})
 		discoveredManyEarth.removeClass('noAnim');
 		discoveredManyH1.removeClass('noAnim');
 		setTimeout(function() {
@@ -195,10 +196,10 @@ $(document).ready(function () {
 			$('.earthsPop')
 				.velocity({	
 					translateX: [ 
-						function() { return r(0, screenWidth) + '%' }
+						function() { return r(-screenWidth, screenWidth) + '%' }
 					], 
 					translateY: [
-						function() { return r(0, screenHeight) + '%' }
+						function() { return r(-screenHeight, screenHeight*2) + '%' }
 					],
 					width: [
 						function() { return r(1, 6) + '%' }
