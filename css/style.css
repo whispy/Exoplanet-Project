@@ -714,11 +714,11 @@ a {
 }
 
 .hoverInfoMass::after {
-	content:"This will contain text describing what mjups actually are. mJUP is the amount of mustard in a standard can of Jelly Under Petroleum. If the amount is too high, then nothing will happen. Same if it is too low.";
+	content:"The mass of the planet, using Jupiter as its scale (e.g. a planet that has the exact same mass as Jupiter will therefore be 1mJUP).";
 }
 
 .hoverInfoTemp::after {
-	content:"This will contain text describing what K means. Kelvin. Learned that in high school chemistry. ";
+	content:"K stands for Kelvin, which is a temperature scale developed in the 1800s. 0K is the lowest possible temperature, known as absolute zero, at which an object's molecules have no kinetic energy. 0K is equivalent to -273.15 Celsius.";
 }
 
 .hoverInfoMass:hover::after, .hoverInfoTemp:hover::after, .hoverInfoDiscovery:hover::after {

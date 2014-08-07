@@ -66,10 +66,11 @@ function updateCards(planets, skip) {
                       "<h4>Age:</h4>",
                       "<p class=\"detailText\" id=\"value4\">"+planets[i][12]+"</p>",
                       "<h4>Info heading:</h4>",
-                      "<p class=\"detailText\" id=\"value4\">Some informative text goes here</p>",
+                      "<p class=\"detailText\" id=\"value4\">"+planets[i][20]+"</p>",
                       "</div>",
                       "</div>"].join('\n');
             $(".planetsGrid .flexContainer").append(card);
+            //need to apply colors to .earth13 based on the temperature that is pulled from the database
           }
         }
 
