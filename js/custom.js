@@ -323,7 +323,7 @@ $(document).ready(function () {
         $('#loadingIconContainer').removeClass('loadingIconReset');
 		skip++;
 		updateCards(planets, skip);
-		$('#loadingIconContainer').addClass('loadingIconReset');
+		//$('#loadingIconContainer').addClass('loadingIconReset');
 	});
 
 	exoplanets.on('value', function(snap) {
