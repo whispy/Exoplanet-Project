@@ -70,15 +70,13 @@ function updateCards(planets, skip) {
                       "</div>",
                       "</div>"].join('\n');
             $(".planetsGrid .flexContainer").append(card);
-            	var colors = ['rgb(248,192,91)', 'rgb(189,24,56)', 'rgb(52,219,159)', 'rgb(219,139,52)', 'rgb(42,130,189)'];
-
+            
+            var colors = ['rgb(248,192,91)', 'rgb(189,24,56)', 'rgb(52,219,159)', 'rgb(219,139,52)', 'rgb(42,130,189)'];
 			$('.earth13').each(function() {
-				//var butter = Math.floor(Math.random() * (200 - 40 + 1)) + 40;
 				$(this).css('background-color', colors[Math.floor(Math.random() * colors.length)]);
-				//$(this).css({'width' : butter, 'height' : butter});
 			});
 
-            //need to apply colors to .earth13 based on the temperature that is pulled from the database
+            //need to apply colors to .earth13 based on the temperature that is pulled from the database, and not just randomly...
           }
         }
 
