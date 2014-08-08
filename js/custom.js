@@ -75,6 +75,7 @@ function updateCards(planets, skip) {
         }
 
 function exploreClick() {
+	circulateStart();
 	var planets = [];
 	exoplanets.on('value', function(snap) {
 		var count = 0;
@@ -151,8 +152,6 @@ $(document).ready(function () {
 	}
 
 	colorPicker();
-
-	circulateStart();
 
 	earth1.addClass('resetDiv');
 	earthContainer.addClass('noAnim');
