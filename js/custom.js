@@ -47,7 +47,7 @@ function updateCards(planets, skip) {
         	$('#loadMore').removeClass('resetDiv');
           skip = skip || 1;
           console.log(planets);
-          for(i=10*skip-10;i<10*skip;i++) {
+          for(i=10*skip-10;i<10*skip;i++) { //stuff should say 'unknown' unless there is data to fill it.
             var card = ["<div class=\"content planetsCard\">",
                       "<div class=\"cardLeft\">",
                       "<h3 id=\"planet"+i+"\">"+planets[i][0]+"</h3>",
@@ -63,13 +63,21 @@ function updateCards(planets, skip) {
                       "<p class=\"detailText\" id=\"value2\">"+planets[i][3]+"</p>",
                       "<h4><span class=\"hoverInfoTemp\">Temperature (K)<sup>?</sup></span>:</h4>",
                       "<p class=\"detailText\" id=\"value2\">"+planets[i][11]+" K</p>",
-                      "<h4>Age:</h4>",
-                      "<p class=\"detailText\" id=\"value4\">"+planets[i][12]+"</p>",
-                      "<h4>Info heading:</h4>",
-                      "<p class=\"detailText\" id=\"value4\">"+planets[i][20]+"</p>",
+                      "<h4>Star's Mass:</h4>",
+                      "<p class=\"detailText\" id=\"value4\">"+planets[i][19]+"</p>",
+                      "<h4><span class=\"hoverInfoTemp\">Star's Temperature (K)<sup>?</sup></span>:</h4>",
+                      "<p class=\"detailText\" id=\"value4\">"+planets[i][22]+"</p>",
                       "</div>",
                       "</div>"].join('\n');
             $(".planetsGrid .flexContainer").append(card);
+            	var colors = ['rgb(248,192,91)', 'rgb(189,24,56)', 'rgb(52,219,159)', 'rgb(219,139,52)', 'rgb(42,130,189)'];
+
+			$('.earth13').each(function() {
+				//var butter = Math.floor(Math.random() * (200 - 40 + 1)) + 40;
+				$(this).css('background-color', colors[Math.floor(Math.random() * colors.length)]);
+				//$(this).css({'width' : butter, 'height' : butter});
+			});
+
             //need to apply colors to .earth13 based on the temperature that is pulled from the database
           }
         }
