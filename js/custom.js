@@ -58,15 +58,15 @@ function updateCards(planets, skip) {
                       "<h4><span class=\"hoverInfoDiscovery\">Discovery Method<sup>?</sup></span>:</h4>",
                       "<p class=\"detailText\" id=\"value1\">"+planets[i][13]+"</p>",
                       "<h4>Discovery Year:</h4>",
-                      "<p class=\"detailText\" id=\"value3\">"+planets[i][14]+"</p>",
+                      "<p class=\"detailText\" id=\"value2\">"+planets[i][14]+"</p>",
                       "<h4><span class=\"hoverInfoMass\">Mass (m<sub>JUP</sub>)<sup>?</sup></span>:</h4>",
-                      "<p class=\"detailText\" id=\"value2\">"+planets[i][3]+"</p>",
+                      "<p class=\"detailText\" id=\"value3\">"+planets[i][3]+"</p>",
                       "<h4><span class=\"hoverInfoTemp\">Temperature (K)<sup>?</sup></span>:</h4>",
-                      "<p class=\"detailText\" id=\"value2\">"+planets[i][11]+" K</p>",
+                      "<p class=\"detailText\" id=\"value4\">"+planets[i][11]+"</p>",
                       "<h4>Star's Mass:</h4>",
-                      "<p class=\"detailText\" id=\"value4\">"+planets[i][19]+"</p>",
+                      "<p class=\"detailText\" id=\"value5\">"+planets[i][19]+"</p>",
                       "<h4><span class=\"hoverInfoTemp\">Star's Temperature (K)<sup>?</sup></span>:</h4>",
-                      "<p class=\"detailText\" id=\"value4\">"+planets[i][22]+"</p>",
+                      "<p class=\"detailText\" id=\"value6\">"+planets[i][22]+"</p>",
                       "</div>",
                       "</div>"].join('\n');
             $(".planetsGrid .flexContainer").append(card);
@@ -78,6 +78,16 @@ function updateCards(planets, skip) {
 
             //need to apply colors to .earth13 based on the temperature that is pulled from the database, and not just randomly...
           }
+
+          var getTemp = $('.planetsCard .cardRight').each(function() {
+				var tempEach = $(this).find('#value4').text();
+				console.log(tempEach);
+
+				if(tempEach == 557.9) {
+					$(this).parent().find('.earth13').css({'background-color': '#222'})
+				}
+				
+			})
         }
 
 function exploreClick() {
