@@ -198,9 +198,11 @@ $(document).ready(function () {
 	orbitAnimation();
 	/* End Calculate & Add Planets To Slide 4  */
 
-	function r (min, max) {
-	    return Math.floor(Math.random() * (max - min + 1)) + min;
-	}
+	/* Do Maths */
+		function r (min, max) {
+		    return Math.floor(Math.random() * (max - min + 1)) + min;
+		}
+	/* End Do Maths */
 
 	/* Add Classes At Load */
 		earth1.addClass('resetDiv');
@@ -306,32 +308,34 @@ $(document).ready(function () {
 		}, { offset: '80%'});
 	/* End Waypoints */
 
-	var hashArray = ['#howManyVisited', '#visitedOne', '#howManyDiscovered','#whyCare', '#firstReason', '#secondReason', '#thirdReason', '#fourthReason', '#fifthReason', '#sixthReason']
-	if($.inArray(window.location.hash, hashArray) > -1){
-		var hash = window.location.hash;
-		setTimeout(function() {
-			$('.earthOutContainer').velocity("stop");
-		}, 2500);
-		scrollToOnLoad(hash);
-	}
+	/* Do At Load, Depending On Hash */
+		var hashArray = ['#howManyVisited', '#visitedOne', '#howManyDiscovered','#whyCare', '#firstReason', '#secondReason', '#thirdReason', '#fourthReason', '#fifthReason', '#sixthReason']
+		if($.inArray(window.location.hash, hashArray) > -1){
+			var hash = window.location.hash;
+			setTimeout(function() {
+				$('.earthOutContainer').velocity("stop");
+			}, 2500);
+			scrollToOnLoad(hash);
+		}
 
-	if(window.location.href.indexOf('#action') > -1){
-		var hash = window.location.hash;
-		setTimeout(function() {
-			$('.earthOutContainer').velocity("stop");
-		}, 2500);
-		actionClick();
-		scrollToOnLoad(hash);
-	}
+		if(window.location.href.indexOf('#action') > -1){
+			var hash = window.location.hash;
+			setTimeout(function() {
+				$('.earthOutContainer').velocity("stop");
+			}, 2500);
+			actionClick();
+			scrollToOnLoad(hash);
+		}
 
-	if(window.location.href.indexOf('#explore') > -1){
-		var hash = window.location.hash;
-		setTimeout(function() {
-			$('.earthOutContainer').velocity("stop");
-		}, 2500);
-		exploreClick();
-		scrollToOnLoad(hash);
-	}
+		if(window.location.href.indexOf('#explore') > -1){
+			var hash = window.location.hash;
+			setTimeout(function() {
+				$('.earthOutContainer').velocity("stop");
+			}, 2500);
+			exploreClick();
+			scrollToOnLoad(hash);
+		}
+	/* End Do At Load, Depending On Hash */
 
 	/* Piwik Events */
 		whyCareButton.on('click', function(){
@@ -349,17 +353,20 @@ $(document).ready(function () {
 		})
 	/* Piwik Events */
 
-	var root = $('html, body');
-	$('a').click(function() {
-	    var href = $.attr(this, 'href');
-	    var offsetPlus = $(href).offset().top;
-		root.animate({
-			scrollTop: offsetPlus
-		}, 500, 'easeOutQuad');
-		//$('.earthOutContainer').velocity("stop");
-		window.location.href = href;
-	    return false;
-	});
+	/* Animate ScrollTo On Click*/
+		var root = $('html, body');
+		$('a').click(function(e) {
+			e.preventDefault(); // hopefully prevents flickering...
+		    var href = $.attr(this, 'href');
+		    var offsetPlus = $(href).offset().top;
+			root.animate({
+				scrollTop: offsetPlus
+			}, 500, 'easeOutQuad');
+			$('.earthOutContainer').velocity("stop");
+			window.location.href = href;
+		    return false;
+		});
+	/* End Animate ScrollTo On Click*/
         
 	var planets = [];
 	var skip = 1;
