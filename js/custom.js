@@ -195,7 +195,7 @@ $(document).ready(function () {
 	/* End Browser Checking */
 
 	/* Calculate & Add Planets To Slide 4  */
-	orbitAnimation();
+		orbitAnimation();
 	/* End Calculate & Add Planets To Slide 4  */
 
 	/* Do Maths */

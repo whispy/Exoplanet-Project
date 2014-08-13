@@ -626,14 +626,15 @@ h2 {
 	margin-left:-50%;
 	margin-top:-17px;
 	position: absolute;
-	background-color: rgb(134, 13, 33);
+	background-color: rgb(151, 13, 36);
 	border-radius:3px;
 	z-index:-2;
 	transform: skew(20deg); 
-    transition: all 0.7s ease-in-out; 
+    transition: all 0.4s ease-in-out; 
 }
 
 .miniCTA .visit:hover::before {
+	transition: all 0.7s ease-in-out; 
 	width:800px;
 }
 
