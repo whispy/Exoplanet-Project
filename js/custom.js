@@ -356,7 +356,7 @@ $(document).ready(function () {
 	/* Animate ScrollTo On Click*/
 		var root = $('html, body');
 		$('a').click(function(e) {
-			e.preventDefault(); // hopefully prevents flickering...
+			//e.preventDefault(); // hopefully prevents flickering...
 		    var href = $.attr(this, 'href');
 		    var offsetPlus = $(href).offset().top;
 			root.animate({
