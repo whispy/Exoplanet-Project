@@ -763,7 +763,7 @@ a {
 }
 
 .hoverInfoTemp::after {
-	content:"K stands for Kelvin, which is a temperature scale developed in the 1800s. 0K is the lowest possible temperature, known as absolute zero, at which an object's molecules have no kinetic energy. 0K is equivalent to -273.15 Celsius.";
+	content:"K stands for Kelvin, which is a temperature scale developed in the 1800s. 0K — equal to -273.15 Celsius — is the lowest possible temperature, known as absolute zero, at which an object's molecules have no kinetic energy (i.e. are not moving). The circles representing each planet are colored according to their temperature.";
 }
 
 .hoverInfoMass:hover::after, .hoverInfoTemp:hover::after, .hoverInfoDiscovery:hover::after {
