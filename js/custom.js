@@ -122,6 +122,9 @@ function setReasonsHeight() {
 			if (heightEachPlus > docHeight) {
 				$(this).parent().css({'height': heightEachPlus})
 			}
+			else {
+				$(this).parent().css({'height': ''})
+			}
 		})
 	}
 
@@ -373,3 +376,7 @@ $(document).ready(function () {
 		});
 	}
 });
+
+$(window).resize(function() {
+	setReasonsHeight();
+}); 
