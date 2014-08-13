@@ -152,7 +152,7 @@ function orbitAnimation() {
 			$(this).css('background-color', colors[Math.floor(Math.random() * colors.length)]);
 		});
 	}
-
+	earthContainer = $('.earthContainer');
 	colorPicker();
 }
 
@@ -184,7 +184,6 @@ $(document).ready(function () {
 		visitedOneEarth = $('#visitedOne .earth');
 		visitedOneH1 = $('#visitedOne h1');
 		earth1 = $('#earth1');
-		earthContainer = $('.earthContainer')
 	/* End Global Variables */
 
 	/* Browser Checking */
