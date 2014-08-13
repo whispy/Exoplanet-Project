@@ -114,10 +114,24 @@ function actionClick() {
 	whatDoFromAction.removeClass('resetDiv');
 }
 
+function setReasonsHeight() {
+		var docHeight = $(window).height();
+		var getHeight = $('.slide .reasons').each(function() {
+			var heightEach = $(this).height();
+			var heightEachPlus = heightEach + 150;
+			if (heightEachPlus > docHeight) {
+				$(this).parent().css({'height': heightEachPlus})
+			}
+		})
+	}
+
 $(window).load(function() {
 	$('h1, p').widowFix({
 		letterLimit: 10
 	});
+
+	setReasonsHeight();
+
 });
 
 $(document).ready(function () {
@@ -168,6 +182,8 @@ $(document).ready(function () {
 	}
 
 	colorPicker();
+
+
 
 	earth1.addClass('resetDiv');
 	earthContainer.addClass('noAnim');
