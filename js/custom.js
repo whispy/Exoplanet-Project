@@ -234,7 +234,7 @@ $(document).ready(function () {
 
 		var screenWidth = window.screen.availWidth;
 		var docWidth = $(window).width();
-		var screenHeight = window.screen.availHeight;
+		var screenHeight = $(window).height();
 		discoveredMany.waypoint(function() {
 			$('.earthOutContainer').css({
 				width: docWidth,
@@ -367,32 +367,35 @@ $(document).ready(function () {
 		    return false;
 		});
 	/* End Animate ScrollTo On Click*/
-        
-	var planets = [];
-	var skip = 1;
-	$("#loadMore a").click(function() {
-        circulateStart();
-        $('#loadingIconContainer').removeClass('loadingIconReset');
-		skip++;
-		updateCards(planets, skip);
-		$('#loadingIconContainer').addClass('loadingIconReset');
-	});
 
-	exoplanets.on('value', function(snap) {
-		var count = 0;
-		$.each(snap.val(), function(index, value) {
-			planets.push(value);
-			count++;
+	/* Add Cards When Clicking Load More & Set Planets Counter On Slide 4*/
+		var planets = [];
+		var skip = 1;
+		$("#loadMore a").click(function() {
+	        circulateStart();
+	        $('#loadingIconContainer').removeClass('loadingIconReset');
+			skip++;
+			updateCards(planets, skip);
+			$('#loadingIconContainer').addClass('loadingIconReset');
 		});
-		setHowMany(count);
-	});
 
-	function setHowMany(planets) {
-		console.log(planets);
-		$("#howMany").html(function() {
-			return planets+" <br />";
+		exoplanets.on('value', function(snap) {
+			var count = 0;
+			$.each(snap.val(), function(index, value) {
+				planets.push(value);
+				count++;
+			});
+			setHowMany(count);
 		});
-	}
+
+		function setHowMany(planets) {
+			console.log(planets);
+			$("#howMany").html(function() {
+				return planets+" <br />";
+			});
+		}
+	/* End Add Cards When Clicking Load More & Set Planets Counter On Slide 4*/
+
 });
 
 $(window).resize(function() {
