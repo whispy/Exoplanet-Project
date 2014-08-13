@@ -413,6 +413,7 @@ noscript div a {
 	padding-right:20px;
 	padding-top:20px;
 	padding-bottom:20px;
+	position: relative;
 }
 
 .actionsCardHero {
@@ -603,6 +604,50 @@ h2 {
 	font-size:1.625rem;
 	line-height:1.875rem;
 	text-align:center;
+}
+
+.miniCTA {
+	width:auto;
+	background-color: rgb(189,24,56);
+	display:table;
+	margin-left:auto;
+	margin-bottom:-20px;
+	margin-right:-20px;
+	margin-top:15px;
+	border:1px solid rgba(134, 13, 33, 0.2);
+	overflow:hidden;
+	border-top-left-radius: 3px;
+	border-bottom-right-radius: 3px;
+}
+
+.miniCTA .visit::before {
+	content: "";
+	width: 0;
+	height: 75px;
+	margin-left:-50%;
+	margin-top:-17px;
+	position: absolute;
+	background-color: rgb(134, 13, 33);
+	border-radius:3px;
+	z-index:-2;
+	transform: skew(20deg); 
+    transition: all 0.7s ease-in-out; 
+}
+
+.miniCTA .visit:hover::before {
+	width:800px;
+}
+
+.actionsCard .visit {
+	text-align: right;
+	position:relative;
+	display:block;
+	z-index:200;
+	color:#fff;
+	padding-top:5px;
+	padding-bottom:5px;
+	padding-right:15px;
+	padding-left:15px;
 }
 
 h3 {
