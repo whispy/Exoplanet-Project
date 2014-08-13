@@ -91,8 +91,32 @@ function updateCards(planets, skip) {
 				var tempEach = $(this).find('#value4').text();
 				console.log(tempEach);
 
-				if(tempEach == 557.9) {
-					$(this).parent().find('.earth13').css({'background-color': '#222'})
+				if(tempEach <= 300) {
+					$(this).parent().find('.earth13').css({'background-color': '#7eb9e8'})
+				}
+
+				if(tempEach >= 301 && tempEach <= 500) {
+					$(this).parent().find('.earth13').css({'background-color': '#95c7de'})
+				}
+
+				if(tempEach >= 501 && tempEach <= 800) {
+					$(this).parent().find('.earth13').css({'background-color': '#b0d8d3'})
+				}
+
+				if(tempEach >= 801 && tempEach <= 1100) {
+					$(this).parent().find('.earth13').css({'background-color': '#fce493'})
+				}
+
+				if(tempEach >= 1101 && tempEach <= 1500) {
+					$(this).parent().find('.earth13').css({'background-color': '#e99f65'})
+				}
+
+				if(tempEach >= 1501 && tempEach <= 2000) {
+					$(this).parent().find('.earth13').css({'background-color': '#d05c3e'})
+				}
+
+				if(tempEach >= 2001) {
+					$(this).parent().find('.earth13').css({'background-color': '#c84531'})
 				}
 				
 			})
