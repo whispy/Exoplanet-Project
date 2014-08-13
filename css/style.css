@@ -814,6 +814,9 @@ footer a {
 
 @media handheld, only screen and (max-width: 777px) { /* mobile landscape */
 
+	.reasons {
+		width:60%;
+	}
 
 	h2 {
 		margin-left:10%;
@@ -861,21 +864,6 @@ footer a {
 
 
 @media handheld, only screen and (max-width: 854px) { /*tablet portrait */
-
-	.reasons {
-		width:80%;
-	}
-
-	/*#firstReason, #secondReason, #thirdReason, #fourthReason, #fifthReason, #sixthReason {
-		height:auto;
-		overflow:visible;
-	}*/
-
-/*	#firstReason .downArrow, #secondReason .downArrow, #thirdReason .downArrow, #fourthReason .downArrow, #fifthReason .downArrow, #sixthReason .downArrow {
-		position:relative;
-		margin-top:auto;
-		margin-bottom:0px;
-	}*/
 
 	.infoText:nth-child(1) {
 		margin-bottom:0px;
@@ -960,6 +948,10 @@ footer a {
 }
 
 @media handheld, only screen and (max-width: 540px) { /* mobile portrait */
+
+	.reasons {
+		width:80%;
+	}
 
 	#earth1 {
 		height:250px;

@@ -4,7 +4,15 @@ var exoplanets = new Firebase(EXO_FIREBASE);
 
 function scrollToOnLoad(selector) {
 	var hash = $(selector);
-	hash.velocity("scroll", {duration: 600, offset: 2});
+	var root = $('html, body');
+	var hashPlus = $(hash).offset().top;
+	//root.scrollTop(0);
+	setTimeout(function(){
+		root.animate({
+			scrollTop: hashPlus
+		}, 600, 'easeOutQuad');
+	}, 200);
+	/*hash.velocity("scroll", {duration: 600, offset: 2});*/
 	return false;
 }
 
@@ -139,11 +147,13 @@ $(window).load(function() {
 
 $(document).ready(function () {
 
+	/* Browser Checking */
 	var isWebkit = /Webkit/i.test(navigator.userAgent),
 		isChrome = /Chrome/i.test(navigator.userAgent),
 		isMobile = !!("ontouchstart" in window),
 		isAndroid = /Android/i.test(navigator.userAgent),
 		isIE = document.documentMode;
+	/* End Browser Checking */
 
 	var earthsCount = isMobile ? (isAndroid ? 40 : 60) : (isChrome ? 40 : 60),
 	earthsHtml = ""
@@ -154,23 +164,23 @@ $(document).ready(function () {
 
 	$(earthsHtml).prependTo(discoveredMany);
 
-	explore = $('#explore');
-	action = $('#action');
-	callToActionExplore = $('.cta a[href="#explore"]');
-	callToActionAction = $('.cta a[href="#action"]');
-	whatDoFromExplore = $('#whatDoFromExplore');
-	whatDoFromAction = $('#whatDoFromAction');
-	discoveredMany = $('#discoveredMany');
-	discoveredManyH1 = $('#discoveredMany h1');
-	visitedOne = $('#visitedOne');
-	whatDo = $('#whatDo');
-	whyCareButton = $('a[href="#whyCare"]');
-	cta = $('.cta');
-	discoveredManyEarth = $('#discoveredMany .earth');
-	visitedOneEarth = $('#visitedOne .earth');
-	visitedOneH1 = $('#visitedOne h1');
-	earth1 = $('#earth1');
-	earthContainer = $('.earthContainer')
+	var explore = $('#explore');
+		action = $('#action');
+		callToActionExplore = $('.cta a[href="#explore"]');
+		callToActionAction = $('.cta a[href="#action"]');
+		whatDoFromExplore = $('#whatDoFromExplore');
+		whatDoFromAction = $('#whatDoFromAction');
+		discoveredMany = $('#discoveredMany');
+		discoveredManyH1 = $('#discoveredMany h1');
+		visitedOne = $('#visitedOne');
+		whatDo = $('#whatDo');
+		whyCareButton = $('a[href="#whyCare"]');
+		cta = $('.cta');
+		discoveredManyEarth = $('#discoveredMany .earth');
+		visitedOneEarth = $('#visitedOne .earth');
+		visitedOneH1 = $('#visitedOne h1');
+		earth1 = $('#earth1');
+		earthContainer = $('.earthContainer')
 
 	function r (min, max) {
 	    return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -185,8 +195,6 @@ $(document).ready(function () {
 	}
 
 	colorPicker();
-
-
 
 	earth1.addClass('resetDiv');
 	earthContainer.addClass('noAnim');
@@ -341,12 +349,15 @@ $(document).ready(function () {
 		actionClick();
 	})
 
+	var root = $('html, body');
 	$('a').click(function() {
 	    var href = $.attr(this, 'href');
-	    var hrefFunc = $(href)
-	    hrefFunc.velocity("scroll", {duration: 600, offset: 1});
-	    $('.earthOutContainer').velocity("stop");
-	    window.location.href = href;
+	    var offsetPlus = $(href).offset().top;
+		root.animate({
+			scrollTop: offsetPlus
+		}, 500, 'easeOutQuad');
+		//$('.earthOutContainer').velocity("stop");
+		window.location.href = href;
 	    return false;
 	});
         
