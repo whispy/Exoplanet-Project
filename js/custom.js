@@ -330,6 +330,8 @@ $(document).ready(function () {
 				cta.removeClass("ctaEnterAnimate");
 			}, 1000);
 		}, { offset: '80%'});
+
+		$('.temperature').waypoint('sticky');
 	/* End Waypoints */
 
 	/* Do At Load, Depending On Hash */
