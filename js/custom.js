@@ -136,6 +136,26 @@ function setReasonsHeight() {
 		})
 	}
 
+function orbitAnimation() {
+	var earthsCount = isMobile ? (isAndroid ? 40 : 60) : (isChrome ? 40 : 60),
+		earthsHtml = ""
+
+	for (var i = 0; i < earthsCount; i++) {
+		earthsHtml += "<div class='earthOutContainer'><div class='earthContainer earth'><div class='earthInner'></div></div></div>";
+	}
+
+	$(earthsHtml).prependTo(discoveredMany);
+
+	function colorPicker() {
+		var colors = ['rgb(248,192,91)', 'rgb(189,24,56)', 'rgb(52,219,159)', 'rgb(219,139,52)', 'rgb(42,130,189)'];
+		$('.earthInner').each(function() {
+			$(this).css('background-color', colors[Math.floor(Math.random() * colors.length)]);
+		});
+	}
+
+	colorPicker();
+}
+
 $(window).load(function() {
 	$('h1, p').widowFix({
 		letterLimit: 10
@@ -147,24 +167,8 @@ $(window).load(function() {
 
 $(document).ready(function () {
 
-	/* Browser Checking */
-	var isWebkit = /Webkit/i.test(navigator.userAgent),
-		isChrome = /Chrome/i.test(navigator.userAgent),
-		isMobile = !!("ontouchstart" in window),
-		isAndroid = /Android/i.test(navigator.userAgent),
-		isIE = document.documentMode;
-	/* End Browser Checking */
-
-	var earthsCount = isMobile ? (isAndroid ? 40 : 60) : (isChrome ? 40 : 60),
-	earthsHtml = ""
-
-	for (var i = 0; i < earthsCount; i++) {
-		earthsHtml += "<div class='earthOutContainer'><div class='earthContainer earth'><div class='earthInner'></div></div></div>";
-	}
-
-	$(earthsHtml).prependTo(discoveredMany);
-
-	var explore = $('#explore');
+	/* Global Variables */
+		explore = $('#explore');
 		action = $('#action');
 		callToActionExplore = $('.cta a[href="#explore"]');
 		callToActionAction = $('.cta a[href="#action"]');
@@ -181,20 +185,23 @@ $(document).ready(function () {
 		visitedOneH1 = $('#visitedOne h1');
 		earth1 = $('#earth1');
 		earthContainer = $('.earthContainer')
+	/* End Global Variables */
+
+	/* Browser Checking */
+		isWebkit = /Webkit/i.test(navigator.userAgent),
+		isChrome = /Chrome/i.test(navigator.userAgent),
+		isMobile = !!("ontouchstart" in window),
+		isAndroid = /Android/i.test(navigator.userAgent),
+		isIE = document.documentMode;
+	/* End Browser Checking */
+
+	/* Calculate & Add Planets to Slide 4  */
+	orbitAnimation();
+	/* End Calculate & Add Planets to Slide 4  */
 
 	function r (min, max) {
 	    return Math.floor(Math.random() * (max - min + 1)) + min;
 	}
-
-	function colorPicker() {
-		var colors = ['rgb(248,192,91)', 'rgb(189,24,56)', 'rgb(52,219,159)', 'rgb(219,139,52)', 'rgb(42,130,189)'];
-
-		$('.earthInner').each(function() {
-			$(this).css('background-color', colors[Math.floor(Math.random() * colors.length)]);
-		});
-	}
-
-	colorPicker();
 
 	earth1.addClass('resetDiv');
 	earthContainer.addClass('noAnim');
