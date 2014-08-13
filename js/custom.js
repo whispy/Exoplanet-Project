@@ -331,7 +331,7 @@ $(document).ready(function () {
 			}, 1000);
 		}, { offset: '80%'});
 
-		$('.temperature').waypoint('sticky');
+		$('.tempWrapper').waypoint('sticky');
 	/* End Waypoints */
 
 	/* Do At Load, Depending On Hash */
