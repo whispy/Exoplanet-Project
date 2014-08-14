@@ -6,13 +6,11 @@ function scrollToOnLoad(selector) {
 	var hash = $(selector);
 	var root = $('html, body');
 	var hashPlus = $(hash).offset().top;
-	//root.scrollTop(0);
 	setTimeout(function(){
 		root.animate({
 			scrollTop: hashPlus
 		}, 600, 'easeOutQuad');
 	}, 200);
-	/*hash.velocity("scroll", {duration: 600, offset: 2});*/
 	return false;
 }
 
@@ -80,18 +78,12 @@ function updateCards(planets, skip) {
                       "</div>",
                       "</div>"].join('\n');
             $(".planetsGrid .flexContainer").append(card);
-            
-            var colors = ['rgb(248,192,91)', 'rgb(189,24,56)', 'rgb(52,219,159)', 'rgb(219,139,52)', 'rgb(42,130,189)'];
-			$('.earth13').each(function() {
-				$(this).css('background-color', colors[Math.floor(Math.random() * colors.length)]);
-			});
 
-            //need to apply colors to .earth13 based on the temperature that is pulled from the database, and not just randomly...
           }
 
-          var getTemp = $('.planetsCard .cardRight').each(function() {
+          var getTemp = $('.planetsCard .cardRight').each(function() { // Apply color to planet based on temperature.
 				var tempEach = $(this).find('#value4').text();
-				console.log(tempEach);
+				//console.log(tempEach);
 
 				if(tempEach <= 300) {
 					$(this).parent().find('.earth13').css({'background-color': '#7eb9e8'})
@@ -134,7 +126,7 @@ function updateCards(planets, skip) {
 function exploreClick() {
 	circulateStart();
 	var planets = [];
-	exoplanets.on('value', function(snap) {
+	exoplanets.on('value', function(snap) { // Load exoplanet information
 		var count = 0;
           $.each(snap.val(), function(index, value) {
             planets.push(value);
@@ -155,23 +147,23 @@ function actionClick() {
 	whatDoFromAction.removeClass('resetDiv');
 }
 
-function setReasonsHeight() {
-		var docHeight = $(window).height();
-		var getHeight = $('.slide .reasons').each(function() {
-			var heightEach = $(this).height();
-			var heightEachPlus = heightEach + 150;
-			if (heightEachPlus > docHeight) {
-				$(this).parent().css({'height': heightEachPlus})
-			}
-			else {
-				$(this).parent().css({'height': ''})
-			}
-		})
-	}
+function setReasonsHeight() { // Fix text overrunning reasons containers on small widths
+	var docHeight = $(window).height();
+	var getHeight = $('.slide .reasons').each(function() {
+		var heightEach = $(this).height();
+		var heightEachPlus = heightEach + 150;
+		if (heightEachPlus > docHeight) {
+			$(this).parent().css({'height': heightEachPlus})
+		}
+		else {
+			$(this).parent().css({'height': ''})
+		}
+	})
+}
 
 function orbitAnimation() {
-	var earthsCount = isMobile ? (isAndroid ? 40 : 60) : (isChrome ? 40 : 60),
-		earthsHtml = ""
+	var earthsCount = isMobile ? (isAndroid ? 40 : 60) : (isChrome ? 40 : 60)
+	var	earthsHtml = ""
 
 	for (var i = 0; i < earthsCount; i++) {
 		earthsHtml += "<div class='earthOutContainer'><div class='earthContainer earth'><div class='earthInner'></div></div></div>";
@@ -212,6 +204,7 @@ $(document).ready(function () {
 		visitedOne = $('#visitedOne');
 		whatDo = $('#whatDo');
 		whyCareButton = $('a[href="#whyCare"]');
+		loadMore = $('a[href="#loadMore"]');
 		cta = $('.cta');
 		discoveredManyEarth = $('#discoveredMany .earth');
 		visitedOneEarth = $('#visitedOne .earth');
@@ -309,7 +302,6 @@ $(document).ready(function () {
 	  		if (direction === 'down') {
 	  			$('.earthOutContainer').velocity("stop");
 	  		}
-
 	  		else {
 	  			$('.earthOutContainer').velocity({rotateZ: '-3600deg'}, 100000, "linear");
 	  		}
@@ -370,7 +362,7 @@ $(document).ready(function () {
 		}
 	/* End Do At Load, Depending On Hash */
 
-	/* Piwik Events */
+	/* Piwik Events & Clicks */
 		whyCareButton.on('click', function(){
 			_paq.push(['trackEvent', 'Slides', 'Scroll to: Why Should You Care?']);
 		})
@@ -383,6 +375,10 @@ $(document).ready(function () {
 		callToActionAction.on('click', function(){
 			_paq.push(['trackEvent', 'Call To Action', 'Action']);
 			actionClick();
+		})
+
+		loadMore.on('click', function(){
+			_paq.push(['trackEvent', 'Load More', 'Load More Planets']);
 		})
 	/* Piwik Events */
 
