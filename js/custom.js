@@ -52,7 +52,7 @@ function updateCards(planets, skip) {
 			$("#loading3").circulate("Stop");
         	$('#loadMore').removeClass('resetDiv');
           skip = skip || 1;
-          console.log(planets);
+          //console.log(planets);
           for(i=10*skip-10;i<10*skip;i++) { //stuff should say 'N/A' unless there is data to fill it.
             var card = ["<div class=\"content planetsCard\">",
                       "<div class=\"cardLeft\">",
