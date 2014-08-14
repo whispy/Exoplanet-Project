@@ -46,82 +46,80 @@ function circulateStart() {
 
 
 function updateCards(planets, skip) {
-        	$('#loadingIconContainer').addClass('loadingIconReset');
-        	$("#loading1").circulate("Stop");
-			$("#loading2").circulate("Stop");
-			$("#loading3").circulate("Stop");
-        	$('#loadMore').removeClass('resetDiv');
-          skip = skip || 1;
-          //console.log(planets);
-          for(i=10*skip-10;i<10*skip;i++) { //stuff should say 'N/A' unless there is data to fill it.
-            var card = ["<div class=\"content planetsCard\">",
-                      "<div class=\"cardLeft\">",
-                      "<h3 id=\"planet"+i+"\">"+planets[i][0]+"</h3>",
-                      "<div class=\"earth13\"></div>",
-                      "<p class=\"hot\">H</p>",
-                      "<div class=\"tempSmall\"></div>",
-                      "</div>",
-                      "<div class=\"planetsInfo cardRight\">",
-                      "<h5>Lorem ipsum lorem ipsum lorem ipsum filler text until we get descriptive sentences hooked up</h5>",
-                      "<h4><span class=\"hoverInfoDiscovery\">Discovery Method<sup>?</sup></span>:</h4>",
-                      "<p class=\"detailText\" id=\"value1\">"+planets[i][13]+"</p>",
-                      "<h4>Discovery Year:</h4>",
-                      "<p class=\"detailText\" id=\"value2\">"+planets[i][14]+"</p>",
-                      "<h4><span class=\"hoverInfoMass\">Mass (m<sub>JUP</sub>)<sup>?</sup></span>:</h4>",
-                      "<p class=\"detailText\" id=\"value3\">"+planets[i][3]+"</p>",
-                      "<h4><span class=\"hoverInfoTemp\">Temperature (K)<sup>?</sup></span>:</h4>",
-                      "<p class=\"detailText\" id=\"value4\">"+planets[i][11]+"</p>",
-                      "<h4>Star's Mass:</h4>",
-                      "<p class=\"detailText\" id=\"value5\">"+planets[i][19]+"</p>",
-                      "<h4><span class=\"hoverInfoTemp\">Star's Temperature (K)<sup>?</sup></span>:</h4>",
-                      "<p class=\"detailText\" id=\"value6\">"+planets[i][22]+"</p>",
-                      "</div>",
-                      "</div>"].join('\n');
-            $(".planetsGrid .flexContainer").append(card);
+	$('#loadingIconContainer').addClass('loadingIconReset');
+	$("#loading1").circulate("Stop");
+	$("#loading2").circulate("Stop");
+	$("#loading3").circulate("Stop");
+	$('#loadMore').removeClass('resetDiv');
+	skip = skip || 1;
+	//console.log(planets);
+	for(i=10*skip-10;i<10*skip;i++) { //stuff should say 'N/A' unless there is data to fill it.
+		var card = ["<div class=\"content planetsCard\">",
+		"<div class=\"cardLeft\">",
+		"<h3 id=\"planet"+i+"\">"+planets[i][0]+"</h3>",
+		"<div class=\"earth13\"></div>",
+		"<p class=\"hot\">H</p>",
+		"<div class=\"tempSmall\"></div>",
+		"</div>",
+		"<div class=\"planetsInfo cardRight\">",
+		"<h5>Lorem ipsum lorem ipsum lorem ipsum filler text until we get descriptive sentences hooked up</h5>",
+		"<h4><span class=\"hoverInfoDiscovery\">Discovery Method<sup>?</sup></span>:</h4>",
+		"<p class=\"detailText\" id=\"value1\">"+planets[i][13]+"</p>",
+		"<h4>Discovery Year:</h4>",
+		"<p class=\"detailText\" id=\"value2\">"+planets[i][14]+"</p>",
+		"<h4><span class=\"hoverInfoMass\">Mass (m<sub>JUP</sub>)<sup>?</sup></span>:</h4>",
+		"<p class=\"detailText\" id=\"value3\">"+planets[i][3]+"</p>",
+		"<h4><span class=\"hoverInfoTemp\">Temperature (K)<sup>?</sup></span>:</h4>",
+		"<p class=\"detailText\" id=\"value4\">"+planets[i][11]+"</p>",
+		"<h4>Star's Mass:</h4>",
+		"<p class=\"detailText\" id=\"value5\">"+planets[i][19]+"</p>",
+		"<h4><span class=\"hoverInfoTemp\">Star's Temperature (K)<sup>?</sup></span>:</h4>",
+		"<p class=\"detailText\" id=\"value6\">"+planets[i][22]+"</p>",
+		"</div>",
+		"</div>"].join('\n');
+		$(".planetsGrid .flexContainer").append(card);
+	}
 
-          }
+	var getTemp = $('.planetsCard .cardRight').each(function() { // Apply color to planet based on temperature.
+		var tempEach = $(this).find('#value4').text();
+		//console.log(tempEach);
 
-          var getTemp = $('.planetsCard .cardRight').each(function() { // Apply color to planet based on temperature.
-				var tempEach = $(this).find('#value4').text();
-				//console.log(tempEach);
+		if(tempEach <= 300) {
+			$(this).parent().find('.earth13').css({'background-color': '#7eb9e8'})
+			$(this).parent().find('.tempSmall').addClass('temp1')
+		}
 
-				if(tempEach <= 300) {
-					$(this).parent().find('.earth13').css({'background-color': '#7eb9e8'})
-					$(this).parent().find('.tempSmall').addClass('temp1')
-				}
+		if(tempEach >= 301 && tempEach <= 500) {
+			$(this).parent().find('.earth13').css({'background-color': '#95c7de'})
+			$(this).parent().find('.tempSmall').addClass('temp2')
+		}
 
-				if(tempEach >= 301 && tempEach <= 500) {
-					$(this).parent().find('.earth13').css({'background-color': '#95c7de'})
-					$(this).parent().find('.tempSmall').addClass('temp2')
-				}
+		if(tempEach >= 501 && tempEach <= 800) {
+			$(this).parent().find('.earth13').css({'background-color': '#b0d8d3'})
+			$(this).parent().find('.tempSmall').addClass('temp3')
+		}
 
-				if(tempEach >= 501 && tempEach <= 800) {
-					$(this).parent().find('.earth13').css({'background-color': '#b0d8d3'})
-					$(this).parent().find('.tempSmall').addClass('temp3')
-				}
+		if(tempEach >= 801 && tempEach <= 1100) {
+			$(this).parent().find('.earth13').css({'background-color': '#fce493'})
+			$(this).parent().find('.tempSmall').addClass('temp4')
+		}
 
-				if(tempEach >= 801 && tempEach <= 1100) {
-					$(this).parent().find('.earth13').css({'background-color': '#fce493'})
-					$(this).parent().find('.tempSmall').addClass('temp4')
-				}
+		if(tempEach >= 1101 && tempEach <= 1500) {
+			$(this).parent().find('.earth13').css({'background-color': '#e99f65'})
+			$(this).parent().find('.tempSmall').addClass('temp5')
+		}
 
-				if(tempEach >= 1101 && tempEach <= 1500) {
-					$(this).parent().find('.earth13').css({'background-color': '#e99f65'})
-					$(this).parent().find('.tempSmall').addClass('temp5')
-				}
+		if(tempEach >= 1501 && tempEach <= 2000) {
+			$(this).parent().find('.earth13').css({'background-color': '#d05c3e'})
+			$(this).parent().find('.tempSmall').addClass('temp6')
+		}
 
-				if(tempEach >= 1501 && tempEach <= 2000) {
-					$(this).parent().find('.earth13').css({'background-color': '#d05c3e'})
-					$(this).parent().find('.tempSmall').addClass('temp6')
-				}
-
-				if(tempEach >= 2001) {
-					$(this).parent().find('.earth13').css({'background-color': '#c84531'})
-					$(this).parent().find('.tempSmall').addClass('temp7')
-				}
-				
-			})
-        }
+		if(tempEach >= 2001) {
+			$(this).parent().find('.earth13').css({'background-color': '#c84531'})
+			$(this).parent().find('.tempSmall').addClass('temp7')
+		}	
+	})
+}
 
 function exploreClick() {
 	circulateStart();
