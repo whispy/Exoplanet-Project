@@ -245,6 +245,7 @@ noscript div a {
 .tempWrapper {
 	height:0px;
 	margin-bottom:80px;
+	transition: height 200ms cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
 .tempWrapper.stuck {
@@ -263,6 +264,7 @@ noscript div a {
 .stuck .temperature {
 	margin-top:10px;
 	width:50%;
+	min-width:100px;
 	height:20px;
 	border:2px solid #fff;
 	box-shadow:0px 1px 2px rgb(30, 24, 24);
@@ -270,7 +272,7 @@ noscript div a {
 }
 
 .stuck .temperature:before {
-	left:-30px;
+	left:-34px;
 	bottom:0%;
 	color:#fff;
 }
@@ -286,6 +288,7 @@ noscript div a {
 	background-color:rgb(213, 213, 213);
 	padding-top:10px;
 	padding-bottom:20px;
+	overflow:hidden;
 
 }
 
