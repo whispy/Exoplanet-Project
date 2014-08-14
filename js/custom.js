@@ -55,14 +55,16 @@ function updateCards(planets, skip) {
         	$('#loadMore').removeClass('resetDiv');
           skip = skip || 1;
           console.log(planets);
-          for(i=10*skip-10;i<10*skip;i++) { //stuff should say 'unknown' unless there is data to fill it.
+          for(i=10*skip-10;i<10*skip;i++) { //stuff should say 'N/A' unless there is data to fill it.
             var card = ["<div class=\"content planetsCard\">",
                       "<div class=\"cardLeft\">",
                       "<h3 id=\"planet"+i+"\">"+planets[i][0]+"</h3>",
                       "<div class=\"earth13\"></div>",
+                      "<p class=\"hot\">H</p>",
+                      "<div class=\"tempSmall\"></div>",
                       "</div>",
                       "<div class=\"planetsInfo cardRight\">",
-                      "<h5>blah blah blah blah blah blah filler text until we get descriptive sentences hooked up</h5>",
+                      "<h5>Lorem ipsum lorem ipsum lorem ipsum filler text until we get descriptive sentences hooked up</h5>",
                       "<h4><span class=\"hoverInfoDiscovery\">Discovery Method<sup>?</sup></span>:</h4>",
                       "<p class=\"detailText\" id=\"value1\">"+planets[i][13]+"</p>",
                       "<h4>Discovery Year:</h4>",
@@ -93,30 +95,37 @@ function updateCards(planets, skip) {
 
 				if(tempEach <= 300) {
 					$(this).parent().find('.earth13').css({'background-color': '#7eb9e8'})
+					$(this).parent().find('.tempSmall').addClass('temp1')
 				}
 
 				if(tempEach >= 301 && tempEach <= 500) {
 					$(this).parent().find('.earth13').css({'background-color': '#95c7de'})
+					$(this).parent().find('.tempSmall').addClass('temp2')
 				}
 
 				if(tempEach >= 501 && tempEach <= 800) {
 					$(this).parent().find('.earth13').css({'background-color': '#b0d8d3'})
+					$(this).parent().find('.tempSmall').addClass('temp3')
 				}
 
 				if(tempEach >= 801 && tempEach <= 1100) {
 					$(this).parent().find('.earth13').css({'background-color': '#fce493'})
+					$(this).parent().find('.tempSmall').addClass('temp4')
 				}
 
 				if(tempEach >= 1101 && tempEach <= 1500) {
 					$(this).parent().find('.earth13').css({'background-color': '#e99f65'})
+					$(this).parent().find('.tempSmall').addClass('temp5')
 				}
 
 				if(tempEach >= 1501 && tempEach <= 2000) {
 					$(this).parent().find('.earth13').css({'background-color': '#d05c3e'})
+					$(this).parent().find('.tempSmall').addClass('temp6')
 				}
 
 				if(tempEach >= 2001) {
 					$(this).parent().find('.earth13').css({'background-color': '#c84531'})
+					$(this).parent().find('.tempSmall').addClass('temp7')
 				}
 				
 			})
