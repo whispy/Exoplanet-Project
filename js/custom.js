@@ -382,15 +382,17 @@ $(document).ready(function () {
 
 	/* Animate ScrollTo On Click*/
 		var root = $('html, body');
-		$('a').click(function(e) {
-			//e.preventDefault(); // hopefully prevents flickering...
+		$('a').on("click", function() {
 		    var href = $.attr(this, 'href');
 		    var offsetPlus = $(href).offset().top;
 			root.animate({
 				scrollTop: offsetPlus
-			}, 500, 'easeOutQuad');
-			$('.earthOutContainer').velocity("stop");
-			window.location.href = href;
+			}, 500, 'easeOutQuad', function() {
+				$('.earthOutContainer').velocity("stop");
+				if(href != '#loadMore'){
+					window.location.href = href;
+				}
+			});
 		    return false;
 		});
 	/* End Animate ScrollTo On Click*/
