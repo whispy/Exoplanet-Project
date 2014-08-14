@@ -1,19 +1,21 @@
 module.exports = function(grunt) {
 
 	grunt.initConfig({
-		includereplace: {
-			your_target: {
-				options: {
-				// Task-specific options go here.
-      			},
-      			files: [
-      				{src: ['*.html', 'writings/*.html', 'designs/*.html'], dest: './', expand: true, cwd: 'grunt-templates/'}
-      			]
-    		}
-  		}
+    autoprefixer: {
+      options: {
+        diff: true
+        // Task-specific options go here.
+      },
+      multiple_files: {
+        expand: true,
+        flatten: true,
+        src: 'grunt-templates/css/*.css', // -> src/css/file1.css, src/css/file2.css
+        dest: './css/' // -> dest/css/file1.css, dest/css/file2.css
+      },
+    },
 	})
 
-  grunt.loadNpmTasks('grunt-include-replace');
+  grunt.loadNpmTasks('grunt-autoprefixer');
 
-  grunt.registerTask('default', ['includereplace']);
+  grunt.registerTask('default', ['autoprefixer']);
 };
