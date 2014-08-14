@@ -339,10 +339,6 @@ $(document).ready(function () {
 				cta.removeClass("ctaEnterAnimate");
 			}, 1000);
 		}, { offset: '80%'});
-
-		$('.tempWrapper').waypoint('sticky', {
-			offset:-20
-		});
 	/* End Waypoints */
 
 	/* Do At Load, Depending On Hash */
