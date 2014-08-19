@@ -180,31 +180,31 @@ $(window).load(function() {
 $(document).ready(function () {
 
   /* Global Variables */
-  explore = $('#explore');
-  action = $('#action');
-  callToActionExplore = $('.cta a[href="#explore"]');
-  callToActionAction = $('.cta a[href="#action"]');
-  whatDoFromExplore = $('#whatDoFromExplore');
-  whatDoFromAction = $('#whatDoFromAction');
-  discoveredMany = $('#discoveredMany');
-  discoveredManyH1 = $('#discoveredMany h1');
-  visitedOne = $('#visitedOne');
-  whatDo = $('#whatDo');
-  whyCareButton = $('a[href="#whyCare"]');
-  loadMore = $('a[href="#loadMore"]');
-  cta = $('.cta');
-  discoveredManyEarth = $('#discoveredMany .earth');
-  visitedOneEarth = $('#visitedOne .earth');
-  visitedOneH1 = $('#visitedOne h1');
-  earth1 = $('#earth1');
+    explore = $('#explore');
+    action = $('#action');
+    callToActionExplore = $('.cta a[href="#explore"]');
+    callToActionAction = $('.cta a[href="#action"]');
+    whatDoFromExplore = $('#whatDoFromExplore');
+    whatDoFromAction = $('#whatDoFromAction');
+    discoveredMany = $('#discoveredMany');
+    discoveredManyH1 = $('#discoveredMany h1');
+    visitedOne = $('#visitedOne');
+    whatDo = $('#whatDo');
+    whyCareButton = $('a[href="#whyCare"]');
+    loadMore = $('a[href="#loadMore"]');
+    cta = $('.cta');
+    discoveredManyEarth = $('#discoveredMany .earth');
+    visitedOneEarth = $('#visitedOne .earth');
+    visitedOneH1 = $('#visitedOne h1');
+    earth1 = $('#earth1');
   /* End Global Variables */
 
   /* Browser Checking */
-  isWebkit = /Webkit/i.test(navigator.userAgent),
-  isChrome = /Chrome/i.test(navigator.userAgent),
-  isMobile = !!("ontouchstart" in window),
-  isAndroid = /Android/i.test(navigator.userAgent),
-  isIE = document.documentMode;
+    isWebkit = /Webkit/i.test(navigator.userAgent),
+    isChrome = /Chrome/i.test(navigator.userAgent),
+    isMobile = !!("ontouchstart" in window),
+    isAndroid = /Android/i.test(navigator.userAgent),
+    isIE = document.documentMode;
   /* End Browser Checking */
 
   /* Calculate & Add Planets To Slide 4  */
@@ -212,205 +212,205 @@ $(document).ready(function () {
   /* End Calculate & Add Planets To Slide 4  */
 
   /* Do Maths */
-  function r (min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-  }
+    function r (min, max) {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
   /* End Do Maths */
 
   /* Add Classes At Load */
-  earth1.addClass('resetDiv');
-  earthContainer.addClass('noAnim');
-  earthContainer.addClass('earthsPop');
-  discoveredManyH1.addClass('earthOpacity')
-  visitedOneEarth.addClass('earthOpacity');
-  visitedOneH1.addClass('earthOpacity');
-  discoveredManyEarth.addClass('earthOpacity');
-  visitedOneH1.addClass('noAnim');
-  discoveredManyH1.addClass('noAnim');
-  explore.addClass('resetDiv');
-  action.addClass('resetDiv');
-  whatDoFromExplore.addClass('resetDiv');
-  whatDoFromAction.addClass('resetDiv');
+    earth1.addClass('resetDiv');
+    earthContainer.addClass('noAnim');
+    earthContainer.addClass('earthsPop');
+    discoveredManyH1.addClass('earthOpacity')
+    visitedOneEarth.addClass('earthOpacity');
+    visitedOneH1.addClass('earthOpacity');
+    discoveredManyEarth.addClass('earthOpacity');
+    visitedOneH1.addClass('noAnim');
+    discoveredManyH1.addClass('noAnim');
+    explore.addClass('resetDiv');
+    action.addClass('resetDiv');
+    whatDoFromExplore.addClass('resetDiv');
+    whatDoFromAction.addClass('resetDiv');
   /*End Add Classes At Load*/
 
   /* Waypoints */
-  visitedOne.waypoint(function() {
-    setTimeout(function(){
-      visitedOneEarth.removeClass('earthOpacity');
-      earth1.removeClass('resetDiv');
-      earth1.addClass('earthOneAnimate');
-      visitedOneH1.removeClass('noAnim');
-      visitedOneH1.addClass('visitedOneH1Animate');
-      visitedOneH1.removeClass('earthOpacity');
-    }, 400);
-  }, { offset: '50%'});
+    visitedOne.waypoint(function() {
+      setTimeout(function(){
+        visitedOneEarth.removeClass('earthOpacity');
+        earth1.removeClass('resetDiv');
+        earth1.addClass('earthOneAnimate');
+        visitedOneH1.removeClass('noAnim');
+        visitedOneH1.addClass('visitedOneH1Animate');
+        visitedOneH1.removeClass('earthOpacity');
+      }, 400);
+    }, { offset: '50%'});
 
-  var screenWidth = window.screen.availWidth;
-  var docWidth = $(window).width();
-  var screenHeight = $(window).height();
-  discoveredMany.waypoint(function() {
-    $('.earthOutContainer').css({
-      width: docWidth,
-      height: screenHeight,
-    })
-    discoveredManyEarth.removeClass('noAnim');
-    discoveredManyH1.removeClass('noAnim');
-    setTimeout(function() {
-      discoveredManyEarth.removeClass('earthOpacity');
-    },650)
-    setTimeout(function(){
-      $('.earthsPop')
-      .velocity({	
-        translateX: [ 
-          function() { return r(-screenWidth, screenWidth) + '%' }
-        ], 
-        translateY: [
-          function() { return r(-screenHeight, screenHeight) + '%' }
-        ],
-        width: [
-          function() { return r(1, 6) + '%' }
-        ],
-      }, 1000)
-    }, 650);
-    setTimeout(function(){
-      $('.earthOutContainer')
-      .velocity({
-        rotateZ: [
-          function() {return r(-3600, -6000)}
-        ]
-      }, 180000, "linear");
-    }, 2000)
-    setTimeout(function(){
-      discoveredManyH1.removeClass('earthOpacity');
-    }, 2500)
-  }, { offset: '70%'});
+    var screenWidth = window.screen.availWidth;
+    var docWidth = $(window).width();
+    var screenHeight = $(window).height();
+    discoveredMany.waypoint(function() {
+      $('.earthOutContainer').css({
+        width: docWidth,
+        height: screenHeight,
+      })
+      discoveredManyEarth.removeClass('noAnim');
+      discoveredManyH1.removeClass('noAnim');
+      setTimeout(function() {
+        discoveredManyEarth.removeClass('earthOpacity');
+      },650)
+      setTimeout(function(){
+        $('.earthsPop')
+        .velocity({	
+          translateX: [ 
+            function() { return r(-screenWidth, screenWidth) + '%' }
+          ], 
+          translateY: [
+            function() { return r(-screenHeight, screenHeight) + '%' }
+          ],
+          width: [
+            function() { return r(1, 6) + '%' }
+          ],
+        }, 1000)
+      }, 650);
+      setTimeout(function(){
+        $('.earthOutContainer')
+        .velocity({
+          rotateZ: [
+            function() {return r(-3600, -6000)}
+          ]
+        }, 180000, "linear");
+      }, 2000)
+      setTimeout(function(){
+        discoveredManyH1.removeClass('earthOpacity');
+      }, 2500)
+    }, { offset: '70%'});
 
-  discoveredMany.waypoint(function(direction) {
-    if (direction === 'down') {
-      $('.earthOutContainer').velocity("stop");
-    }
-    else {
-      $('.earthOutContainer').velocity({rotateZ: '-3600deg'}, 100000, "linear");
-    }
-  }, {
-    offset: function() {
-      return -$(this).height();
-    }
-  });
+    discoveredMany.waypoint(function(direction) {
+      if (direction === 'down') {
+        $('.earthOutContainer').velocity("stop");
+      }
+      else {
+        $('.earthOutContainer').velocity({rotateZ: '-3600deg'}, 100000, "linear");
+      }
+    }, {
+      offset: function() {
+        return -$(this).height();
+      }
+    });
 
-  whatDo.waypoint(function() {
-    cta.addClass('ctaEnterAnimate');
-    setTimeout(function(){
-      cta.removeClass("ctaEnterAnimate");
-    }, 1000);
-  }, { offset: '80%'});
+    whatDo.waypoint(function() {
+      cta.addClass('ctaEnterAnimate');
+      setTimeout(function(){
+        cta.removeClass("ctaEnterAnimate");
+      }, 1000);
+    }, { offset: '80%'});
 
-  whatDoFromExplore.waypoint(function() {
-    cta.addClass('ctaEnterAnimate');
-    setTimeout(function(){
-      cta.removeClass("ctaEnterAnimate");
-    }, 1000);
-  }, { offset: '80%'});
+    whatDoFromExplore.waypoint(function() {
+      cta.addClass('ctaEnterAnimate');
+      setTimeout(function(){
+        cta.removeClass("ctaEnterAnimate");
+      }, 1000);
+    }, { offset: '80%'});
 
-  whatDoFromAction.waypoint(function() {
-    cta.addClass('ctaEnterAnimate');
-    setTimeout(function(){
-      cta.removeClass("ctaEnterAnimate");
-    }, 1000);
-  }, { offset: '80%'});
+    whatDoFromAction.waypoint(function() {
+      cta.addClass('ctaEnterAnimate');
+      setTimeout(function(){
+        cta.removeClass("ctaEnterAnimate");
+      }, 1000);
+    }, { offset: '80%'});
   /* End Waypoints */
 
   /* Do At Load, Depending On Hash */
-  var hashArray = ['#howManyVisited', '#visitedOne', '#howManyDiscovered','#whyCare', '#firstReason', '#secondReason', '#thirdReason', '#fourthReason', '#fifthReason', '#sixthReason']
-  if($.inArray(window.location.hash, hashArray) > -1){
-    var hash = window.location.hash;
-    setTimeout(function() {
-      $('.earthOutContainer').velocity("stop");
-    }, 2500);
-    scrollToOnLoad(hash);
-  }
+    var hashArray = ['#howManyVisited', '#visitedOne', '#howManyDiscovered','#whyCare', '#firstReason', '#secondReason', '#thirdReason', '#fourthReason', '#fifthReason', '#sixthReason']
+    if($.inArray(window.location.hash, hashArray) > -1){
+      var hash = window.location.hash;
+      setTimeout(function() {
+        $('.earthOutContainer').velocity("stop");
+      }, 2500);
+      scrollToOnLoad(hash);
+    }
 
-  if(window.location.href.indexOf('#action') > -1){
-    var hash = window.location.hash;
-    setTimeout(function() {
-      $('.earthOutContainer').velocity("stop");
-    }, 2500);
-    actionClick();
-    scrollToOnLoad(hash);
-  }
+    if(window.location.href.indexOf('#action') > -1){
+      var hash = window.location.hash;
+      setTimeout(function() {
+        $('.earthOutContainer').velocity("stop");
+      }, 2500);
+      actionClick();
+      scrollToOnLoad(hash);
+    }
 
-  if(window.location.href.indexOf('#explore') > -1){
-    var hash = window.location.hash;
-    setTimeout(function() {
-      $('.earthOutContainer').velocity("stop");
-    }, 2500);
-    exploreClick();
-    scrollToOnLoad(hash);
-  }
+    if(window.location.href.indexOf('#explore') > -1){
+      var hash = window.location.hash;
+      setTimeout(function() {
+        $('.earthOutContainer').velocity("stop");
+      }, 2500);
+      exploreClick();
+      scrollToOnLoad(hash);
+    }
   /* End Do At Load, Depending On Hash */
 
   /* Piwik Events & Clicks */
-  whyCareButton.on('click', function(){
-    _paq.push(['trackEvent', 'Slides', 'Scroll to: Why Should You Care?']);
-  })
+    whyCareButton.on('click', function(){
+      _paq.push(['trackEvent', 'Slides', 'Scroll to: Why Should You Care?']);
+    })
 
-  callToActionExplore.on('click', function(){
-    _paq.push(['trackEvent', 'Call To Action', 'Explore']);
-    exploreClick();
-  })
+    callToActionExplore.on('click', function(){
+      _paq.push(['trackEvent', 'Call To Action', 'Explore']);
+      exploreClick();
+    })
 
-  callToActionAction.on('click', function(){
-    _paq.push(['trackEvent', 'Call To Action', 'Action']);
-    actionClick();
-  })
+    callToActionAction.on('click', function(){
+      _paq.push(['trackEvent', 'Call To Action', 'Action']);
+      actionClick();
+    })
 
-  loadMore.on('click', function(){
-    _paq.push(['trackEvent', 'Load More', 'Load More Planets']);
-  })
+    loadMore.on('click', function(){
+      _paq.push(['trackEvent', 'Load More', 'Load More Planets']);
+    })
   /* Piwik Events */
 
   /* Animate ScrollTo On Click*/
-  var root = $('html, body');
-  $('a').on("click", function() {
-    var href = $.attr(this, 'href');
-    var offsetPlus = $(href).offset().top;
-    root.animate({
-      scrollTop: offsetPlus
-    }, 500, 'easeOutQuad', function() {
-      $('.earthOutContainer').velocity("stop");
-      if(href != '#loadMore'){
-        window.location.href = href;
-      }
+    var root = $('html, body');
+    $('a').on("click", function() {
+      var href = $.attr(this, 'href');
+      var offsetPlus = $(href).offset().top;
+      root.animate({
+        scrollTop: offsetPlus
+      }, 500, 'easeOutQuad', function() {
+        $('.earthOutContainer').velocity("stop");
+        if(href != '#loadMore'){
+          window.location.href = href;
+        }
+      });
+      return false;
     });
-    return false;
-  });
   /* End Animate ScrollTo On Click*/
 
   /* Add Cards When Clicking Load More & Set Planets Counter On Slide 4*/
-  var planets = [];
-  var skip = 1;
-  $("#loadMore a").click(function() {
-    circulateStart();
-    $('#loadingIconContainer').removeClass('loadingIconReset');
-    skip++;
-    console.log(planets);
-    updateCards(planets, skip);
-    $('#loadingIconContainer').addClass('loadingIconReset');
-  });
-  });
-
-
-  d3.xml("systems.xml", "application/xml", function(xmldata) {
-    planets = $("planet",xmldata);
-    setHowMany(planets.length);
-    updateCards(planets);
-  });
-  
-  function setHowMany(planets) {
-    $("#howMany").html(function() {
-      return planets+" <br />";
+    var planets = [];
+    var skip = 1;
+    $("#loadMore a").click(function() {
+      circulateStart();
+      $('#loadingIconContainer').removeClass('loadingIconReset');
+      skip++;
+      console.log(planets);
+      updateCards(planets, skip);
+      $('#loadingIconContainer').addClass('loadingIconReset');
     });
-  }
+    });
+
+
+    d3.xml("systems.xml", "application/xml", function(xmldata) {
+      planets = $("planet",xmldata);
+      setHowMany(planets.length);
+      updateCards(planets);
+    });
+    
+    function setHowMany(planets) {
+      $("#howMany").html(function() {
+        return planets+" <br />";
+      });
+    }
   /* End Add Cards When Clicking Load More & Set Planets Counter On Slide 4*/
 
 
