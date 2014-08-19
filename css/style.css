@@ -341,8 +341,8 @@ noscript div a {
 	-webkit-transition: opacity 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
 	        transition: opacity 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
 	border-radius:3px;
-	max-width:400px;
-    height: auto;
+	width:400px;
+  height: auto;
     -webkit-box-flex: 0;
     -webkit-flex-grow: 0;
         -ms-flex-positive: 0;
