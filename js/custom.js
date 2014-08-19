@@ -60,7 +60,7 @@ function updateCards(planets, skip) {
       "<div class=\"tempSmall\"></div>",
       "</div>",
       "<div class=\"planetsInfo cardRight\">",
-      "<h5>"+($(curPlanets[i]).find("description").text()!==""?$(curPlanets[i]).find("description").text() : "This planet currently has no description.")+"</h5>",
+      "<h5>"+($(curPlanets[i]).find("description").text()!==""?$(curPlanets[i]).find("description").text() : "Unfortunately, there is currently no available description of this planet.")+"</h5>",
       "<h4><span class=\"hoverInfoDiscovery\">Discovery Method<sup>?</sup></span>:</h4>",
       "<p class=\"detailText\" id=\"value1\">"+($(curPlanets[i]).find("discoverymethod").text()!==""?$(curPlanets[i]).find("discoverymethod").text() : "N/A")+"</p>",
       "<h4>Discovery Year:</h4>",
