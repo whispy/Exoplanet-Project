@@ -54,7 +54,7 @@ function updateCards(planets, skip) {
     //$(curPlanets[i]).find("name").text() 
     var card = ["<div class=\"content planetsCard\">",
       "<div class=\"cardLeft\">",
-      "<h3 id=\"planet"+i+"\">"+$(curPlanets[i]).find("name").text()+"</h3>",
+      "<h3 id=\"planet"+i+"\">"+$(curPlanets[i]).find("name").first().text()+"</h3>",
       "<div class=\"earth13\"></div>",
       "<p class=\"hot\">H</p>",
       "<div class=\"tempSmall\"></div>",
@@ -70,9 +70,9 @@ function updateCards(planets, skip) {
       "<h4><span class=\"hoverInfoTemp\">Temperature (K)<sup>?</sup></span>:</h4>",
       "<p class=\"detailText\" id=\"value4\">"+($(curPlanets[i]).find("temperature").text()!==""?$(curPlanets[i]).find("temperature").text() : "N/A")+"</p>",
       "<h4>Star's Mass:</h4>",
-      "<p class=\"detailText\" id=\"value5\">"+($(curPlanets[i]).parent().find("mass").text()!==""?$(curPlanets[i]).parent().find("mass").text() : "N/A")+"</p>",
+      "<p class=\"detailText\" id=\"value5\">"+($(curPlanets[i]).parent().find("mass").first().text()!==""?$(curPlanets[i]).parent().find("mass").first().text() : "N/A")+"</p>",
       "<h4><span class=\"hoverInfoTemp\">Star's Temperature (K)<sup>?</sup></span>:</h4>",
-      "<p class=\"detailText\" id=\"value6\">"+($(curPlanets[i]).parent().find("temperature").text()!==""?$(curPlanets[i]).parent().find("temperature").text() : "N/A")+"</p>",
+      "<p class=\"detailText\" id=\"value6\">"+($(curPlanets[i]).parent().find("temperature").last().text()!==""?$(curPlanets[i]).parent().find("temperature").last().text() : "N/A")+"</p>",
       "</div>",
       "</div>"].join('\n');
       $(".planetsGrid .flexContainer").append(card);
