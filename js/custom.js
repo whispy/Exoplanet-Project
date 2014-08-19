@@ -398,8 +398,6 @@ $(document).ready(function () {
       $('#loadingIconContainer').addClass('loadingIconReset');
     });
 
-
-
     d3.xml("systems.xml", "application/xml", function(xmldata) {
       planets = $("planet",xmldata);
       setHowMany(planets.length);
@@ -412,7 +410,7 @@ $(document).ready(function () {
       });
     }
   /* End Add Cards When Clicking Load More & Set Planets Counter On Slide 4*/
-  
+
 });
 
 $(window).resize(function() {
