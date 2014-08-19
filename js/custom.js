@@ -397,7 +397,7 @@ $(document).ready(function () {
       updateCards(planets, skip);
       $('#loadingIconContainer').addClass('loadingIconReset');
     });
-    });
+
 
 
     d3.xml("systems.xml", "application/xml", function(xmldata) {
@@ -412,7 +412,8 @@ $(document).ready(function () {
       });
     }
   /* End Add Cards When Clicking Load More & Set Planets Counter On Slide 4*/
-
+  
+});
 
 $(window).resize(function() {
   setReasonsHeight();
