@@ -797,7 +797,7 @@ p.detailText {
 	color: #333;
   color: transparent;
   text-shadow: 0 0 #333, .08em 0 0 #fff, 0 0, -.08em 0 0 #fff;
-  background: linear-gradient(rgb(213,213,213), rgb(213,213,213)) no-repeat scroll center 1.09em / 50% 1px transparent;
+  background: linear-gradient(rgb(213, 213, 213) 0%, rgb(213, 213, 213) 25%, rgb(255, 255, 255) 25%, rgb(255, 255, 255) 75%, rgb(213, 213, 213) 75%) no-repeat scroll center 2.25rem / 50% 3px transparent;
   margin-bottom:16px;
 }
 
