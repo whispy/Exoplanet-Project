@@ -911,7 +911,7 @@ p.detailText {
   text-shadow: 0 0 #333, .08em 0 0 #fff, 0 0, -.08em 0 0 #fff;
   background: -webkit-linear-gradient(rgb(213,213,213), rgb(213,213,213)) no-repeat scroll center 1.09em / 50% 1px transparent;
   background: linear-gradient(rgb(213,213,213), rgb(213,213,213)) no-repeat scroll center 1.09em / 50% 1px transparent;
-  background-size: 50% 1px;
+  margin-bottom:16px;
 }
 
 hr {
@@ -920,10 +920,6 @@ hr {
 	width:50%;
 	background-color: rgb(213,213,213);
 	margin:0 auto 15px auto;
-}
-
-.topHr {
-	margin-bottom:1px;
 }
 
 #visitedOne h1, #discoveredMany h1, #whatDo h2, #whatDoFromAction h2, #whatDoFromExplore h2 {
