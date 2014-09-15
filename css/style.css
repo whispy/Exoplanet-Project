@@ -906,6 +906,12 @@ p.detailText {
 
 .reasons h1 {
 	text-align:center;
+	color: #333;
+  color: transparent;
+  text-shadow: 0 0 #333, .08em 0 0 #fff, 0 0, -.08em 0 0 #fff;
+  background: -webkit-linear-gradient(rgb(213,213,213), rgb(213,213,213)) no-repeat scroll center 1.09em / 50% 1px transparent;
+  background: linear-gradient(rgb(213,213,213), rgb(213,213,213)) no-repeat scroll center 1.09em / 50% 1px transparent;
+  background-size: 50% 1px;
 }
 
 hr {
