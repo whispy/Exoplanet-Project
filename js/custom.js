@@ -387,6 +387,10 @@ $(document).ready(function () {
         {
           overlayGrid.removeClass('resetDiv');
         }
+        if(href === '#filterBar')
+        {
+          overlayGrid.addClass('resetDiv');
+        }
       });
       return false;
     });
