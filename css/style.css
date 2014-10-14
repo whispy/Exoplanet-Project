@@ -335,9 +335,9 @@ noscript div a {
 	height:99vh;
 }
 
-#overlayGrid {
-	opacity:0;
-	
+.overlayGrid {
+	opacity:1;
+	z-index:200;
 }
 
 #filterBar {
