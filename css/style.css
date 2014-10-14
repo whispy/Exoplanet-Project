@@ -238,11 +238,6 @@ noscript div a {
             align-items: flex-start;
 }
 
-#planetsLeftColumn {
-	width:20%;
-
-}
-
 #whatDo .flexContainer, #whyCare .flexContainer, #explore .flexContainer, #action .flexContainer {
 	-webkit-box-align: stretch;
 	-webkit-align-items: stretch;
@@ -337,7 +332,27 @@ noscript div a {
 	padding-top:10px;
 	padding-bottom:20px;
 	overflow:hidden;
+	height:800px;
+}
 
+#planetsLeftColumn {
+	width:20%;
+	position:absolute;
+	left:0px;
+	top:0px;
+}
+
+#planetsRightColumn {
+	width:60%;
+	position:absolute;
+	right:0px;
+	top:0px;
+	background-color:grey;
+	height:100px;
+}
+
+#planetsLeftColumn .planetsCard {
+	width:100%;
 }
 
 .planetsCard {
