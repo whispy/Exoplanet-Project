@@ -304,7 +304,7 @@ noscript div a {
 	color:#fff;
 	position:absolute;
 	background-color:rgb(120,120,120);
-	height:70px;
+	height:8vh;
 	width:100%;
 	top:0;
 }
@@ -345,10 +345,10 @@ noscript div a {
 	width:20%;
 	position:absolute;
 	left:0px;
-	top:70px;
+	top:8vh;
 	overflow-y:scroll;
 	overflow-x:hidden;
-	height:inherit;
+	height:91vh;
 	padding-right:20px;
 	padding-left:10px;
 }
@@ -357,9 +357,9 @@ noscript div a {
 	width:80%;
 	position:absolute;
 	right:0px;
-	top:70px;
+	top:8vh;
 	background-color:grey;
-	height:inherit;
+	height:91vh;
 }
 
 #planetsLeftColumn .planetsCard {
@@ -372,16 +372,12 @@ noscript div a {
 	margin: 0 0 0 0 ;
 }
 
-#planetsLeftColumn .tempSmall, #planetsLeftColumn .hot {
+#planetsLeftColumn .tempSmall, #planetsLeftColumn .hot, #planetsLeftColumn .planetsInfo {
 	display:none;
 }
 
 #planetsLeftColumn .earth13 {
 
-}
-
-#planetsLeftColumn .planetsInfo {
-	display:none;
 }
 
 .planetsCard {
