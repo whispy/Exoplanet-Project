@@ -185,7 +185,7 @@ $(document).ready(function () {
     action = $('#action');
     callToActionExplore = $('.cta a[href="#explore"]');
     callToActionAction = $('.cta a[href="#action"]');
-    overlayGridOpen = $('a[href="#overlayGrid"]');
+    overlayGrid = $('#overlayGrid');
     whatDoFromExplore = $('#whatDoFromExplore');
     whatDoFromAction = $('#whatDoFromAction');
     discoveredMany = $('#discoveredMany');
@@ -385,7 +385,7 @@ $(document).ready(function () {
         }
         if(href === '#overlayGrid')
         {
-
+          overlayGrid.removeClass('resetDiv');
         }
       });
       return false;
