@@ -372,6 +372,10 @@ noscript div a {
 	margin: 0 0 0 0 ;
 }
 
+#planetsLeftColumn .tempSmall, #planetsLeftColumn .hot {
+	display:none;
+}
+
 #planetsLeftColumn .earth13 {
 
 }
