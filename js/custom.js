@@ -75,7 +75,8 @@ function updateCards(planets, skip) {
       "<p class=\"detailText\" id=\"value6\">"+($(curPlanets[i]).parent().find("temperature").last().text()!==""?$(curPlanets[i]).parent().find("temperature").last().text() : "N/A")+"</p>",
       "</div>",
       "</div>"].join('\n');
-      $(".planetsGrid .flexContainer").append(card);
+      $(".planetsContainer #planetsLeftColumn").append(card);
+      $(".planetsContainer .flexContainer").append(card);
   }
 
   var getTemp = $('.planetsCard .cardRight').each(function() { // Apply color to planet based on temperature.

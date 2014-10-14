@@ -197,6 +197,11 @@ noscript div a {
     align-items: flex-start;
 }
 
+#planetsLeftColumn {
+	width:20%;
+
+}
+
 #whatDo .flexContainer, #whyCare .flexContainer, #explore .flexContainer, #action .flexContainer {
 	align-items: stretch;
 }
@@ -281,7 +286,7 @@ noscript div a {
 	}
 /* End Temperature Bar */
 
-.planetsGrid {
+.planetsContainer {
 	background-color:rgb(213, 213, 213);
 	padding-top:10px;
 	padding-bottom:20px;
