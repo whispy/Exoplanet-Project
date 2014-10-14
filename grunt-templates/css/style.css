@@ -286,7 +286,7 @@ noscript div a {
 	padding-top:10px;
 	padding-bottom:20px;
 	overflow:hidden;
-	height:800px;
+	height:100vh;
 }
 
 #planetsLeftColumn {
@@ -294,19 +294,36 @@ noscript div a {
 	position:absolute;
 	left:0px;
 	top:0px;
+	overflow-y:scroll;
+	height:inherit;
+
 }
 
 #planetsRightColumn {
-	width:60%;
+	width:80%;
 	position:absolute;
 	right:0px;
 	top:0px;
 	background-color:grey;
-	height:100px;
+	height:inherit;
 }
 
 #planetsLeftColumn .planetsCard {
 	width:100%;
+	height:25vh;
+}
+
+#planetsLeftColumn .cardLeft {
+	padding:0 0 0 0;
+	margin: 0 0 0 0 ;
+}
+
+#planetsLeftColumn .earth13 {
+
+}
+
+#planetsLeftColumn .planetsInfo {
+	display:none;
 }
 
 .planetsCard {
@@ -364,6 +381,18 @@ noscript div a {
 	padding-left:40px;
 	padding-right:40px;
 	padding-bottom:15px;
+}
+
+.earth13 {
+	height:150px;
+	width:150px;
+	margin-left:auto;
+	margin-right:auto;
+	background-color: rgb(160,160,160);
+	border-radius: 50%;
+	position:relative;
+	margin-bottom:30px;
+	margin-top:30px;
 }
 
 .content {
@@ -644,18 +673,6 @@ noscript div a {
 		border-radius: 50%;
 		padding-bottom: 100%;
 		opacity:1;
-	}
-
-	.earth13 {
-		height:150px;
-		width:150px;
-		margin-left:auto;
-		margin-right:auto;
-		background-color: rgb(160,160,160);
-		border-radius: 50%;
-		position:relative;
-		margin-bottom:30px;
-		margin-top:30px;
 	}
 /* Earths end */
 
