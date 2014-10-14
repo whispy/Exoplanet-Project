@@ -76,7 +76,7 @@ function updateCards(planets, skip) {
       "</div>",
       "</div>"].join('\n');
       $(".planetsContainer #planetsLeftColumn").append(card);
-      //$(".planetsContainer .flexContainer").append(card);
+      $(".planetsContainer .flexContainer").append(card);
   }
 
   var getTemp = $('.planetsCard .cardRight').each(function() { // Apply color to planet based on temperature.
@@ -185,6 +185,7 @@ $(document).ready(function () {
     action = $('#action');
     callToActionExplore = $('.cta a[href="#explore"]');
     callToActionAction = $('.cta a[href="#action"]');
+    overlayGridOpen = $('a[href="#overlayGrid"]');
     whatDoFromExplore = $('#whatDoFromExplore');
     whatDoFromAction = $('#whatDoFromAction');
     discoveredMany = $('#discoveredMany');
@@ -381,6 +382,10 @@ $(document).ready(function () {
         $('.earthOutContainer').velocity("stop");
         if(href != '#loadMore'){
           window.location.href = href;
+        }
+        if(href === '#overlayGrid')
+        {
+
         }
       });
       return false;

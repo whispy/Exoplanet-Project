@@ -335,6 +335,11 @@ noscript div a {
 	height:99vh;
 }
 
+#overlayGrid {
+	opacity:0;
+	
+}
+
 #filterBar {
 	color:#fff;
 	position:absolute;
@@ -343,6 +348,38 @@ noscript div a {
 	width:100%;
 	top:0;
 	z-index:20;
+}
+
+#filterBar p {
+	position:absolute;
+}
+
+#gridIcon {
+	height:50px;
+	margin-top:10px;
+	width:50px;
+	background-color:#222;
+	position:absolute;
+	right:10px;
+	top:0px;
+}
+
+#gridIcon:before {
+	content:"";
+	background-color:rgb(120,120,120);
+	width:50px;
+	height:4px;
+	position:absolute;
+	top:23px;
+}
+
+#gridIcon:after {
+	content:"";
+	background-color:rgb(120,120,120);
+	width:4px;
+	height:50px;
+	position:absolute;
+	left:23px;
 }
 
 #planetsLeftColumn {
