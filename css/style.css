@@ -332,24 +332,35 @@ noscript div a {
 	padding-top:10px;
 	padding-bottom:20px;
 	overflow:hidden;
-	height:100vh;
+	height:99vh;
+}
+
+#filterBar {
+	color:#fff;
+	position:absolute;
+	background-color:rgb(120,120,120);
+	height:70px;
+	width:100%;
+	top:0;
+	z-index:20;
 }
 
 #planetsLeftColumn {
 	width:20%;
 	position:absolute;
 	left:0px;
-	top:0px;
+	top:70px;
 	overflow-y:scroll;
 	height:inherit;
-
+	padding-right:20px;
+	padding-left:10px;
 }
 
 #planetsRightColumn {
 	width:80%;
 	position:absolute;
 	right:0px;
-	top:0px;
+	top:70px;
 	background-color:grey;
 	height:inherit;
 }
@@ -573,16 +584,6 @@ noscript div a {
 	-webkit-transition: all 0.08s ease-out;
 	        transition: all 0.08s ease-out;
 	margin-left:-4px;
-}
-
-.filterBar {
-	display:none;
-	color:#fff;
-	background-color:rgb(120,120,120);
-	height:70px;
-	width:100%;
-	top:0;
-	z-index:-20;
 }
 
 #actionsGrid {
